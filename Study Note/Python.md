@@ -1,4 +1,12 @@
 # Python
+## DataType
+### type
+- string
+- number
+- boolean
+### fuction
+#### type(data)
+용도 : data의 자료형을 반환
 ## identifier 
 ### rule
 - 키워드 X
