@@ -36,15 +36,20 @@
 ### *Fuction*
 - **len(list):** 리스트 원소 개수를 반환
 - **del list[index]:** index에 위치한 요소를 제거 *#Mutate*
-
+- **min(list):** 리스트 내부 요소 중 최소값 반환
+- **max(list):** 리스트 내부 요소 중 최대값 반환
+- **sum(list):** 리스트 내부 요소들을 모두 더한 값 반환
+- **reversed(list):** 리스트 내부 요소들의 역순서인 리스트를 반환
+- **list(enumerate(list)):** 리스트의 인덱스와 요소를 매핑한 리스트를 반환
+  
 ### *Method*
 - **append(element):** 리스트 맨 뒷단에 요소 추가 *#Mutate*
 - **insert(pos, element):** 리스트 pos 위치에 요소 추가 *#Mutate*
 - **extend(list):** 리스트 뒤에 입력 리스트를 합병 *#Mutate*
-- **list.pop(index):** index에 위치한 요소를 제거 후 반환 *#Mutate*
-- **list.remove(element):** 리스트의 요소를 제거 *#Mutate*
-- **list.clear():** 리스트의 요소를 전부 제거 *#Mutate*
-- **list.sort(reverse):** 리스트 오름차순(내림차순) 정렬 *#Mutate*
+- **pop(index):** index에 위치한 요소를 제거 후 반환 *#Mutate*
+- **remove(element):** 리스트의 요소를 제거 *#Mutate*
+- **clear():** 리스트의 요소를 전부 제거 *#Mutate*
+- **sort(reverse):** 리스트 오름차순(내림차순) 정렬 *#Mutate*
 
 ### *Note*
 - 리스트 요소로 여러 자료형 혼합 가능
@@ -65,6 +70,7 @@
 
 ### *Method*
 - get(key): key와 매핑되는 값을 반환
+- items(): 딕셔너리의 키와 값을 매핑
 
 ### Note
 - 딕셔너리의 키로 bool, 숫자도 사용 가능
@@ -110,3 +116,14 @@ if 표현식:
 ### *for structure*
 for 반복자 in 반복할 수 있는 것:
 (들여쓰기)코드
+
+### *while structure*
+while 표현식:
+(들여쓰기)코드
+
+### *Operator*
+- **break:** 해당 키위드와 가장 가까운 반복문을 빠져나옴
+- **continue:** 해당 키위드 이후 코드들은 건너뛰고 가장 가까운 반복문의 조건식으로 이동
+
+### *Note*
+- 반복문을 역으로 진행하고 싶다면 stride를 음수로 주거나 reversed() 이용
