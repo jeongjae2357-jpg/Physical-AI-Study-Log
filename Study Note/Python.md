@@ -105,20 +105,20 @@
 - **논리 연산자:** and, or, not 
 
 ### *if structure*
-if 표현식:
+if 표현식:  
 (들여쓰기)표현식이 참인 경우 실행  
 
 ### *Note*
-- 표현식이 None, 0, 0.0라면 False로 나머지는 True로 간주
+- 표현식이 None, 0, 0.0라면 False로 나머지는 True로 간주  
 - pass키워드로 골격만 잡아두기 가능
 
 ## Loop statement
 ### *for structure*
-for 반복자 in 반복할 수 있는 것:
+for 반복자 in 반복할 수 있는 것:  
 (들여쓰기)코드
 
 ### *while structure*
-while 표현식:
+while 표현식:  
 (들여쓰기)코드
 
 ### *Operator*
