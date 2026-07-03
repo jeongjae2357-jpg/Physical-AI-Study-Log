@@ -163,4 +163,16 @@ def 함수 이름(매개변수, ...):
 ### *Note*
 - With open() as file:로 파일 자동 닫기 가능
 
-## Exception
+## Exception Handling
+### *Structure*
+try:  
+(들여쓰기)예외 발생 가능성이 있는 코드  
+except:  
+(들여쓰기)예외 발생시 실행할 코드  
+else:
+(들여쓰기)예외가 발생하지 않았을 때 실행할 코드  
+finally:
+(들여쓰기)무조건 실행할 코드  
+
+### *Exception Object*
+
