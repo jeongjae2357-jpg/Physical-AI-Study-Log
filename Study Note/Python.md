@@ -182,6 +182,29 @@ finally:
 - **Exception:** 모든 예외의 부모
 - **ValueError:** 값이 잘못되었을 때의 예외
 - **IndexError:** 인덱스 잘못 접근했을 때의 예외
+ROS2 조작하면서 사용하던 예외 채워나가기
 
 ### *Note*
 - raise 키워드 로 예외 강제 발생 가능
+
+## Module
+### *Structure*
+import 모듈이름 as 축약어  
+from 모듈이름 import 가져오고 싶은 변수나 함수
+
+### *Type*
+ROS2 조작하면서 사용하던 모듈 채워나가기
+
+### *Note*
+- pip install로 외부 모듈 설치 가능
+
+## Class
+### *Structure*
+class 클래스 이름:  
+(들여쓰기)def __init__(self, 추가 매개변수):  
+(들여쓰기)(들여쓰기)내용
+(들여쓰기)def 메소드 이름(self, 추가 매개변수):
+(들여쓰기)(들여쓰기)내용
+
+### **Fuction**
+- **isinstance(인스턴스, 클래스):** 인스턴스가 해당 클래스 기반으로 만들어졌는지를 bool로 반환
