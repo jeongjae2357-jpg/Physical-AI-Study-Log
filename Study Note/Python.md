@@ -181,7 +181,7 @@ finally:
 ### *Exception Object*
 - **Exception:** 모든 예외의 부모
 - **ValueError:** 값이 잘못되었을 때의 예외
-- **IndexError:** 인덱스 잘못 접근했을 때의 예외
+- **IndexError:** 인덱스 잘못 접근했을 때의 예외  
 ROS2 조작하면서 사용하던 예외 채워나가기
 
 ### *Note*
@@ -201,7 +201,7 @@ ROS2 조작하면서 사용하던 모듈 채워나가기
 ## Class
 ### *Structure*
 class 클래스 이름:  
-(들여쓰기)def __init__(self, 추가 매개변수):  
+(들여쓰기)def __ init__(self, 추가 매개변수):  
 (들여쓰기)(들여쓰기)내용  
 (들여쓰기)def 메소드 이름(self, 추가 매개변수):  
 (들여쓰기)(들여쓰기)내용  
