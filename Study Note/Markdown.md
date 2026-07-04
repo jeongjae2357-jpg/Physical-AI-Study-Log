@@ -18,8 +18,17 @@
 !\[이미지 설명](주소)
 
 ## Table
-|열1|열2|열3|
-|:--|--:|:--:|
-|Cell1|Cell2|Cell3|
-|Cell1|Cell2|Cell3|
-|Cell1|Cell2|Cell3|
+|열1|열2|열3|  
+\|:--|--:|:--:|  
+|Cell1|Cell2|Cell3|  
+|Cell1|Cell2|Cell3|  
+|Cell1|Cell2|Cell3|  
+
+## Code
+\`code`  
+\```(코드 종류)  
+code  
+'''
+
+## More information
+GitHub Flavor Markdown
