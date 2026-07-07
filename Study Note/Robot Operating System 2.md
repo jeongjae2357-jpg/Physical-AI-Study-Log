@@ -1,4 +1,23 @@
 # Robot Operating System 2
+## Concept
+- **Node:** 실행 가능한 최소 단위
+- 
+
+## Command
+|명령어|설명|
+|--|--|
+|source /opt/ros/<버전>/setup.bash|환경변수 설정|
+|ros2 run \<PKG Name> \<Node Name>|패키지의 노드를 실행|
+|ros2 node list|실행 중인 노드 목록|
+|ros2 node info/turtlesim|노드의 정보를 조회|
+
+### Command Note
+- ROS를 실행하기 위해서는 'sudo apt install' 명령으로 설치한 패키지 환경을 /opt/ros/<버전>/ 경로에 setup.bash파일로 읽어와야 함
+- .bashrc파일은 bash의 각종 설정을 저장한다.
+- ROS2를 실행하려면 source /opt/ros/버전/setup.bash 명령어를 입력해줘야 한다.
+- .bashrc에 에 source /opt/ros/버전/setup.bash를 넣고 source ~/.bashrc로 간소화할 수 있다.
+- alias를 통해 더 간소화할 수 있다.
+
 ## Linux Command
 |명령어|설명|
 |--|--|
@@ -24,8 +43,4 @@
 - 터미널을 볼 때 본능적으로 프롬프트의 앞부분을 보는 습관을 기르기
 - 항상 내가 어떤 경로에서 명령을 실행하는지 신경 쓸 것
 - 프롬프트의 ~은 HOME 폴더를 의미한다.
-- .bashrc파일은 bash의 각종 설정을 저장한다.
-- ROS2를 실행하려면 source /opt/ros/버전/setup.bash 명령어를 입력해줘야 한다.
-- .bashrc에 에 source /opt/ros/버전/setup.bash를 넣고 source ~/.bashrc로 간소화할 수 있다.
-- alias를 통해 더 간소화할 수 있다.
 - export ROS_DOMAIN_ID=<ID>를 통해 시스템 도메인을 별도로 관리 가능하다.
