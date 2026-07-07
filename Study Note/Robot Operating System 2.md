@@ -1,20 +1,18 @@
 # Robot Operating System 2
 ## Concept
-- **Node:** 실행 가능한 최소 단위
+- **Node:** 실행 가능한 프로세스의 최소 단위
 - **Service:** 클라이언트가 요청하고 서버가 응답하는 방식으로 두 노드가 데이터를 주고 받는 것
-- **Name Space:** 서비스 적용을 구분하기 위한 경로
+- **NameSpace:** 서비스 적용을 구분하기 위한 경로
 - **Topic:** 토픽의 이름과 데이터의 구조를 공유하는 Publisher에서 Subscriber로 비동기적으로 데이터를 전달하는 방식
 
 
 ### Concept Note
-- 서비스의 정의는 srv 확장명을 가진 파일에 저장된다.
-- srv 파일은 ---를 기준으로 윗부분은 서비스 요청할 때의 데이터를 선언, 아랫부분은 서비스를 응답할 때의 데이터를 선언한다.
-
+- NameSpace 덕분에 경로가 유니크 해져서 통신간 얽힘이 없음
 ## Command
 |명령어|설명|
 |--|--|
 |source /opt/ros/<버전>/setup.bash|환경변수 설정|
-|ros2 run \<PKG Name> \<Node Name>|패키지의 노드를 실행|
+|ros2 run \<PKG Name> \<Node Name>|패키지의 노드를 실행 #\<Node Name>은 임의로 정하는 것이 아닌 executable 파일 임|
 |ros2 node list|실행 중인 노드 목록|
 |ros2 node info <경로>|노드의 정보를 조회|
 |ros2 service list|실행 중인 노드에 제공되고 있는 서비스 목록|
@@ -23,7 +21,7 @@
 |ros2 service call \<service name> \<service definition> "data" |서비스 요청|
 |ros2 topic list|실행 중인 노드에 존재하는 토픽 목록|
 |ros2 topic type <경로>|해당 토픽의 데이터 타입|
-|ros2 topic info <경로>|해당 토픽의 publish, subscribe 상황 정보|
+|ros2 topic info <경로>|해당 토픽의 데이터 타입과 publish, subscribe 상황 정보|
 |ros2 topic pub --(once or rate <hz>) \<topic_name> \<msg_type> "<args>'|topic을 publish|
 |ros2 topic echo <경로>|topic을 subscribe|
 
@@ -32,8 +30,11 @@
 - .bashrc파일은 bash의 각종 설정을 저장한다.
 - .bashrc에 source /opt/ros/버전/setup.bash를 넣고 source ~/.bashrc로 간소화할 수 있다.
 - alias를 통해 더 간소화할 수 있다.
+- 서비스의 정의는 srv 확장명을 가진 파일에 저장된다.
+- srv 파일은 ---를 기준으로 윗부분은 서비스 요청할 때의 데이터를 선언, 아랫부분은 서비스를 응답할 때의 데이터를 선언한다.
 - 서비스 요청의 "data"는 srv에 정의된 형식에 따라 작성하면 된다.
 - ros2 service call \reset std_srvs/srv/Empty로 초기화 가능
+- topic이나 service의 이름과 타입의 경로가 다르게 보임 -> 이름은 변수와 비슷한 개념, 타입은 어떤 패키지의 어느 메세지 타입인지를 보임
 
 ## Linux Command
 |명령어|설명|
