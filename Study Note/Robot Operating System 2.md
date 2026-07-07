@@ -15,11 +15,11 @@
 |ros2 run \<PKG Name> \<Node Name>|패키지의 노드를 실행 #\<Node Name>은 임의로 정하는 것이 아닌 executable 파일 임|
 |ros2 node list|실행 중인 노드 목록|
 |ros2 node info <경로>|노드의 정보를 조회|
-|ros2 service list|실행 중인 노드에 제공되고 있는 서비스 목록|
+|ros2 service list|현재 제공되고 있는 서비스 목록|
 |ros2 service type <경로>|해당 서비스가 사용하는 정의|
 |ros2 interface show <경로>|해당 서비스나 토픽의 내용 확인|
 |ros2 service call \<service name> \<service definition> "data" |서비스 요청|
-|ros2 topic list|실행 중인 노드에 존재하는 토픽 목록|
+|ros2 topic list|현재 존재하는 토픽 목록|
 |ros2 topic type <경로>|해당 토픽의 데이터 타입|
 |ros2 topic info <경로>|해당 토픽의 데이터 타입과 publish, subscribe 상황 정보|
 |ros2 topic pub --(once or rate <hz>) \<topic_name> \<msg_type> "<args>'|topic을 publish|
