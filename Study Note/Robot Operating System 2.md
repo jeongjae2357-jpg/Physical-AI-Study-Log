@@ -3,6 +3,8 @@
 - **Node:** 실행 가능한 최소 단위
 - **Service:** 클라이언트가 요청하고 서버가 응답하는 방식으로 두 노드가 데이터를 주고 받는 것
 - **Name Space:** 서비스 적용을 구분하기 위한 경로
+- **Topic:** 토픽의 이름과 데이터의 구조를 공유하는 Publisher에서 Subscriber로 비동기적으로 메시지를 전달하는 방식
+
 
 ### Concept Note
 - 서비스의 정의는 srv 확장명을 가진 파일에 저장된다.
@@ -14,10 +16,11 @@
 |ros2 run \<PKG Name> \<Node Name>|패키지의 노드를 실행|
 |ros2 node list|실행 중인 노드 목록|
 |ros2 node info/turtlesim|노드의 정보를 조회|
-|ros2 service list|실행 가능한 서비스 목록|
+|ros2 service list|현재 제공되고 있는 서비스 목록|
 |ros2 service type <경로>|해당 서비스가 사용하는 정의|
 |ros2 interface show <경로>|해당 서비스의 내용 확인|
 |ros2 service call \<service name> \<service definition> "data" |서비스 요청|
+|ros2 topic list|현재 존재하는 토픽 목록|
 
 
 ### Command Note
