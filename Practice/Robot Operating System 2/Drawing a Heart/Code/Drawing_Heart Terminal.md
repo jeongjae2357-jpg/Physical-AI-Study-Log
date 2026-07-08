@@ -8,7 +8,3 @@
 
 # Result
 <img width="503" height="527" alt="image" src="https://github.com/user-attachments/assets/e79a781a-abbb-4511-a8e6-278f7f296131" />
-
-
-## Note
-- 터미널에서 실행한 코드
