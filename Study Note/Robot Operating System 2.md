@@ -56,6 +56,16 @@
 |Ctrl + Shift + V|붙여넣기|
 |Tab|자동완성, 공백 후 두 번 연속으로 누르면 입력 가능 목록 등장|
 
+## Python
+|코드|설명|
+|--|--|
+|import rclpy as rp|ROS Client Library for Python 모듈을  임포트|
+|rp.init()|rclpy 초기화|
+|rp.create_node('노드 이름')|해당 이름을 가진 노드를 생성하여 반환
+|def callback(data):|구독 노드가 일정 주기로 발행되는 토픽을 받을 때마다 실행되는 함수를 정의|
+|(node).create_subscription(<data_type>, '<topic_name>', \<callback>, \<QoS History>)|노드가 구독하게 하는 메소드|
+|rp.spin(<노드>) {rp.spin_once(<노드>)}|구독한 토픽에서 발행되는 메세지를 받으면 등록된 callback 함수를 {한번만} 실행|
+
 ## 운영체제
 - **Terminal:**: 사용자가 명령을 내리는 공간
 - **Shell:**: 사용자가 입력한 명령어와 커널이 이해할 수 있는 명령어 사이에서 해석
