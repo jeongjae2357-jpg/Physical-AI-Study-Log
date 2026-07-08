@@ -4,7 +4,7 @@
 - **Service:** 클라이언트가 요청하고 서버가 응답하는 방식으로 두 노드가 데이터를 주고 받는 것
 - **NameSpace:** 서비스 적용을 구분하기 위한 경로
 - **Topic:** 토픽의 이름과 데이터의 구조를 공유하는 Publisher에서 Subscriber로 비동기적으로 데이터를 전달하는 방식
-
+- **Action:** 클라이언트 노드가 Goal(목표)를 요청하면 목표 수행 중에 계속 토픽을 통해 feedback을 발행하고 일을 완료하면 result를 반환하는 방식
 
 ### Concept Note
 - NameSpace 덕분에 경로가 유니크 해져서 통신간 얽힘이 없음
@@ -12,18 +12,21 @@
 |명령어|설명|
 |--|--|
 |source /opt/ros/<버전>/setup.bash|환경변수 설정|
+|rqt_graph|현 통신 상태를 도식으로 표현|
 |ros2 run \<PKG Name> \<Node Name>|패키지의 노드를 실행 #\<Node Name>은 임의로 정하는 것이 아닌 executable 파일 임|
 |ros2 node list|실행 중인 노드 목록|
 |ros2 node info <경로>|노드의 정보를 조회|
 |ros2 service list|현재 제공되고 있는 서비스 목록|
 |ros2 service type <경로>|해당 서비스가 사용하는 정의|
-|ros2 interface show <경로>|해당 서비스나 토픽의 내용 확인|
+|ros2 interface show <경로>|해당 서비스, 토픽이나 액션의 내용 확인|
 |ros2 service call \<service name> \<service definition> "data" |서비스 요청|
 |ros2 topic list|현재 존재하는 토픽 목록|
 |ros2 topic type <경로>|해당 토픽의 데이터 타입|
 |ros2 topic info <경로>|해당 토픽의 데이터 타입과 publish, subscribe 상황 정보|
 |ros2 topic pub --(once or rate <hz>) \<topic_name> \<msg_type> "<args>'|topic을 publish|
 |ros2 topic echo <경로>|topic을 subscribe|
+|ros2 action list|액션 목록을 조회|
+|ros2 action send_goal \<action_name> \<action_type> "values"|액션의 목표를 지정|
 
 ### Command Note
 - ROS를 실행하기 위해서는 'sudo apt install' 명령으로 설치한 패키지 환경을 /opt/ros/<버전>/ 경로에 setup.bash파일로 읽어와야 함
@@ -35,6 +38,7 @@
 - 서비스 요청의 "data"는 srv에 정의된 형식에 따라 작성하면 된다.
 - ros2 service call \reset std_srvs/srv/Empty로 초기화 가능
 - topic이나 service의 이름과 타입의 경로가 다르게 보임 -> 이름은 변수와 비슷한 개념, 타입은 어떤 패키지의 어느 메세지 타입인지를 보임
+- action의 내용은 ---를 기준으로 윗부분은 goal, 중간은 result, 마지막은 feedback을 의미함
 
 ## Linux Command
 |명령어|설명|
