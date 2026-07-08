@@ -67,6 +67,7 @@
 |rp.spin(<노드>) {rp.spin_once(<노드>)}|구독한 토픽에서 발행되는 메세지를 받으면 등록된 callback 함수를 {한번만} 실행|
 |pub = (node).create_publisher(<data_type>, '<topic_name>', \<QoS History>|노드가 발행하게 하는 메소드|
 |msg = <data_type>(), pub.publish(msg)|해당 메세지를 발행|
+|(node).create_timer(timer_period, timer_callback)|주기마다 callback 함수를 실행 > callback 함수 안에 토픽 발행을 구현하여 주기마다 발행하는 기능 구현 가능|
 
 ## 운영체제
 - **Terminal:**: 사용자가 명령을 내리는 공간
