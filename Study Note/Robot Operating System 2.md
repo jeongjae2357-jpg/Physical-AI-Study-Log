@@ -65,6 +65,8 @@
 |def callback(data):|구독 노드가 일정 주기로 발행되는 토픽을 받을 때마다 실행되는 함수를 정의|
 |(node).create_subscription(<data_type>, '<topic_name>', \<callback>, \<QoS History>)|노드가 구독하게 하는 메소드|
 |rp.spin(<노드>) {rp.spin_once(<노드>)}|구독한 토픽에서 발행되는 메세지를 받으면 등록된 callback 함수를 {한번만} 실행|
+|pub = (node).create_publisher(<data_type>, '<topic_name>', \<QoS History>|노드가 발행하게 하는 메소드|
+|msg = <data_type>(), pub.publish(msg)|해당 메세지를 발행|
 
 ## 운영체제
 - **Terminal:**: 사용자가 명령을 내리는 공간
@@ -76,3 +78,4 @@
 - 항상 내가 어떤 경로에서 명령을 실행하는지 신경 쓸 것
 - 프롬프트의 ~은 HOME 폴더를 의미한다.
 - export ROS_DOMAIN_ID=<ID>를 통해 시스템 도메인을 별도로 관리 가능하다.
+- pub.publish(<data_type>())을 바로 했을 때는 초기화된 값이 들어가기 때문에 msg라는 변수로 지정해준 뒤 넣는다.
