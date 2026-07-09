@@ -40,6 +40,8 @@
 - ros2 service call \reset std_srvs/srv/Empty로 초기화 가능
 - topic이나 service의 이름과 타입의 경로가 다르게 보임 -> 이름은 변수와 비슷한 개념, 타입은 어떤 패키지의 어느 메세지 타입인지를 보임
 - action의 내용은 ---를 기준으로 윗부분은 goal, 중간은 result, 마지막은 feedback을 의미함
+- workspace를 빌드하는 colcon builds는 해당 폴더로 가서 사용해야 함(workspace는 여러 개 존재할 수 있기 때문)
+- workspace를 빌드하고 나면 install 폴더의 local_setup.bash를 source로 읽어야 빌드한 환경을 읽을 수 있음
 
 ## Linux Command
 |명령어|설명|
