@@ -63,11 +63,14 @@
 |rp.init()|rclpy 초기화|
 |rp.create_node('노드 이름')|해당 이름을 가진 노드를 생성하여 반환
 |def callback(data):|구독 노드가 일정 주기로 발행되는 토픽을 받을 때마다 실행되는 함수를 정의|
-|(node).create_subscription(<data_type>, '<topic_name>', \<callback>, \<QoS History>)|노드가 구독하게 하는 메소드|
+|(node).create_subscription(<data_type>, '<topic_name>', \<callback>, \<QoS History>)|노드가 해당 토픽에 구독하게 하는 메소드|
 |rp.spin(<노드>) {rp.spin_once(<노드>)}|구독한 토픽에서 발행되는 메세지를 받으면 등록된 callback 함수를 {한번만} 실행|
 |pub = (node).create_publisher(<data_type>, '<topic_name>', \<QoS History>|노드가 발행하게 하는 메소드|
 |msg = <data_type>(), pub.publish(msg)|해당 메세지를 발행|
 |(node).create_timer(timer_period, timer_callback)|주기마다 callback 함수를 실행 > callback 함수 안에 토픽 발행을 구현하여 주기마다 발행하는 기능 구현 가능|
+|cli = (node).create_client(<data_type>, '<service_name>')|해당 노드가 클라이언트 노드가 되게 하는 메소드|
+|cli.call_async(<data_type>.Request())|클라이언트 노드가 요청을 보내게 함|
+|cli.wait_for_service(timeout_sec)|파라미터로 설정한 시간 주기로 서비스가 실행되지 않았다면 False를 반환|
 
 ## 운영체제
 - **Terminal:**: 사용자가 명령을 내리는 공간
