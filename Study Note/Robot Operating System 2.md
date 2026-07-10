@@ -49,7 +49,7 @@
 ### Package Note
 - workspace를 빌드하는 colcon builds는 해당 폴더로 가서 사용해야 함(workspace는 여러 개 존재할 수 있기 때문)
 - workspace를 빌드하고 나면 install 폴더의 local_setup.bash를 source로 읽어야 빌드한 환경을 읽을 수 있음
-
+- 노드를 실행시킬 때, 오류가 났다면 코드 고친 뒤 빌드까지 다시 할 것
 
 ## Linux Command
 |명령어|설명|
