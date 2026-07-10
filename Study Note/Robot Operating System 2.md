@@ -28,6 +28,7 @@
 |ros2 action list|액션 목록을 조회|
 |ros2 action send_goal \<action_name> \<action_type> "values"|액션의 목표를 지정|
 |ros2 pkg create --build-type ament_python <package_name>|패키지 생성 명령|
+|ros2 pkg create --build-type ament_cmake <package_name>|CMakeList.txt라는 파일을 포함하면서 새로운 메시지만 정의는 패키지 생성 명령|
 
 ### Command Note
 - ROS를 실행하기 위해서는 'sudo apt install' 명령으로 설치한 패키지 환경을 /opt/ros/<버전>/ 경로에 setup.bash파일로 읽어와야 함
