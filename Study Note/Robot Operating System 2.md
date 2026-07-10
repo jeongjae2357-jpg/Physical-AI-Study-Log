@@ -85,7 +85,7 @@ WorkSpace/
 |파일|설명|
 |--|--|
 |pacakge(안쪽)|실제 python 코드가 들어감|
-|\__init__.py|해당 파일이 python 패키지로 인식하게 만듦|
+|\_\_init__.py|해당 파일이 python 패키지로 인식하게 만듦|
 |resource/package|ament index가 패키지를 찾게함|
 |test/|테스트 코드나 코드 검사 파일이 들어감|
 |package.xml|패키지의 메타데이터를 담음(<depend>에 해당 패키지 빌드에 필요한 코드를 담음)|
