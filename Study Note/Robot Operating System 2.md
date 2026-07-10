@@ -8,6 +8,7 @@
 
 ### Concept Note
 - NameSpace 덕분에 경로가 유니크 해져서 통신간 얽힘이 없음
+
 ## Command
 |명령어|설명|
 |--|--|
@@ -61,6 +62,9 @@
 |--|--|
 |ros2 pkg create --build-type ament_python <package_name>|패키지 생성 명령|
 |ros2 pkg create --build-type ament_cmake <package_name>|CMakeList.txt라는 파일을 포함하면서 새로운 메시지만 정의는 패키지 생성 명령|
+
+### Package Structure
+
 
 ### Package Note
 - workspace를 빌드하는 colcon builds는 해당 폴더로 가서 사용해야 함(workspace는 여러 개 존재할 수 있기 때문)
