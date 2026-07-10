@@ -70,11 +70,20 @@ WorkSpace/
 ├─ install/
 ├─ log/
 └─ src/
-
-
-│
-─
+    └─ package/
+          ├─ package/
+          │     ├─ __init__.py
+          │     └─ source code.py
+          ├─ resource/
+          │     └─ package
+          ├─ test/
+          ├─ package.xml
+          ├─ setup.py
+          ├─ setup.cfg
+          └─ README.md
 ```
+
+
 
 ### Package Note
 - workspace를 빌드하는 colcon builds는 해당 폴더로 가서 사용해야 함(workspace는 여러 개 존재할 수 있기 때문)
