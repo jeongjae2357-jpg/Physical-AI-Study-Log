@@ -27,8 +27,6 @@
 |ros2 topic echo <경로>|topic을 subscribe|
 |ros2 action list|액션 목록을 조회|
 |ros2 action send_goal \<action_name> \<action_type> "values"|액션의 목표를 지정|
-|ros2 pkg create --build-type ament_python <package_name>|패키지 생성 명령|
-|ros2 pkg create --build-type ament_cmake <package_name>|CMakeList.txt라는 파일을 포함하면서 새로운 메시지만 정의는 패키지 생성 명령|
 
 ### Command Note
 - ROS를 실행하기 위해서는 'sudo apt install' 명령으로 설치한 패키지 환경을 /opt/ros/<버전>/ 경로에 setup.bash파일로 읽어와야 함
@@ -41,8 +39,17 @@
 - ros2 service call \reset std_srvs/srv/Empty로 초기화 가능
 - topic이나 service의 이름과 타입의 경로가 다르게 보임 -> 이름은 변수와 비슷한 개념, 타입은 어떤 패키지의 어느 메세지 타입인지를 보임
 - action의 내용은 ---를 기준으로 윗부분은 goal, 중간은 result, 마지막은 feedback을 의미함
+
+## Package
+|명령어|설명|
+|--|--|
+|ros2 pkg create --build-type ament_python <package_name>|패키지 생성 명령|
+|ros2 pkg create --build-type ament_cmake <package_name>|CMakeList.txt라는 파일을 포함하면서 새로운 메시지만 정의는 패키지 생성 명령|
+
+### Package Note
 - workspace를 빌드하는 colcon builds는 해당 폴더로 가서 사용해야 함(workspace는 여러 개 존재할 수 있기 때문)
 - workspace를 빌드하고 나면 install 폴더의 local_setup.bash를 source로 읽어야 빌드한 환경을 읽을 수 있음
+
 
 ## Linux Command
 |명령어|설명|
