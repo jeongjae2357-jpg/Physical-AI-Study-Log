@@ -57,9 +57,13 @@
 |cli = (node).create_client(<data_type>, '<service_name>')|해당 노드가 클라이언트 노드가 되게 하는 메소드|
 |cli.call_async(<data_type>.Request())|클라이언트 노드가 요청을 보내게 함|
 |cli.wait_for_service(timeout_sec)|파라미터로 설정한 시간 주기로 서비스가 실행되지 않았다면 False를 반환|
+|ActionServer(self, <data_type>, '<action_name>', callback)|해당 데이터 타입의 액션 서버를 생성하고 객체를 반환|
+|MultiThreadedExecutor()|멀티스레드 기능을 제공하는 객체를 반환|
 
 ### Python Note
 - pub.publish(<data_type>())을 바로 했을 때는 초기화된 값이 들어가기 때문에 msg라는 변수로 지정해준 뒤 넣는다.
+- 각 클래스들은 rclpy를 임포트해야 사용할 수 있음
+
 
 ## Package
 |명령어|설명|
