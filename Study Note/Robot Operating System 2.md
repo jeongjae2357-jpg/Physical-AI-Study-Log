@@ -16,16 +16,16 @@
 |rqt_graph|현 통신 상태를 도식으로 표현|
 |ros2 run \<PKG Name> \<Node Name>|패키지의 노드를 실행 #\<Node Name>은 임의로 정하는 것이 아닌 executable 파일 임|
 |ros2 node list|실행 중인 노드 목록|
-|ros2 node info <경로>|노드의 정보를 조회|
+|ros2 node info <노드 이름>|노드의 정보를 조회|
 |ros2 service list|현재 제공되고 있는 서비스 목록|
-|ros2 service type <경로>|해당 서비스가 사용하는 정의|
-|ros2 interface show <경로>|해당 서비스, 토픽이나 액션의 내용 확인|
+|ros2 service type <서비스 이름>|해당 서비스가 사용하는 정의|
+|ros2 interface show <인터페이스 이름>|해당 서비스, 토픽이나 액션의 내용 확인|
 |ros2 service call \<service name> \<service definition> "data" |서비스 요청|
 |ros2 topic list|현재 존재하는 토픽 목록|
-|ros2 topic type <경로>|해당 토픽의 데이터 타입|
-|ros2 topic info <경로>|해당 토픽의 데이터 타입과 publish, subscribe 상황 정보|
-|ros2 topic pub --(once or rate <hz>) \<topic_name> \<msg_type> "<args>'|topic을 publish|
-|ros2 topic echo <경로>|topic을 subscribe|
+|ros2 topic type <토픽 이름>|해당 토픽의 데이터 타입|
+|ros2 topic info <토픽 이름>|해당 토픽의 데이터 타입과 publish, subscribe 상황 정보|
+|ros2 topic pub --(once or rate <hz>) \<topic_name> \<msg_type> "<args>"|topic을 publish|
+|ros2 topic echo <토픽 이름>|topic을 subscribe|
 |ros2 action list|액션 목록을 조회|
 |ros2 action send_goal \<action_name> \<action_type> "values"|액션의 목표를 지정|
 
@@ -40,6 +40,7 @@
 - ros2 service call \reset std_srvs/srv/Empty로 초기화 가능
 - topic이나 service의 이름과 타입의 경로가 다르게 보임 -> 이름은 변수와 비슷한 개념, 타입은 어떤 패키지의 어느 메세지 타입인지를 보임
 - action의 내용은 ---를 기준으로 윗부분은 goal, 중간은 result, 마지막은 feedback을 의미함
+- ROS의 노드, 서비스, 토픽, 액션 이름 모두 경로처럼 생김
 
 ## Python
 |코드|설명|
