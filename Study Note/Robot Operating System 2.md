@@ -58,6 +58,9 @@
 |cli.call_async(<data_type>.Request())|클라이언트 노드가 요청을 보내게 함|
 |cli.wait_for_service(timeout_sec)|파라미터로 설정한 시간 주기로 서비스가 실행되지 않았다면 False를 반환|
 
+### Python Note
+- pub.publish(<data_type>())을 바로 했을 때는 초기화된 값이 들어가기 때문에 msg라는 변수로 지정해준 뒤 넣는다.
+
 ## Package
 |명령어|설명|
 |--|--|
@@ -126,4 +129,3 @@ WorkSpace/
 - 항상 내가 어떤 경로에서 명령을 실행하는지 신경 쓸 것
 - 프롬프트의 ~은 HOME 폴더를 의미한다.
 - export ROS_DOMAIN_ID=<ID>를 통해 시스템 도메인을 별도로 관리 가능하다.
-- pub.publish(<data_type>())을 바로 했을 때는 초기화된 값이 들어가기 때문에 msg라는 변수로 지정해준 뒤 넣는다.
