@@ -66,6 +66,7 @@
 |MultiThreadedExecutor()|멀티스레드 기능을 제공하는 객체를 반환|
 |(node).declare_parameter('<파라미터 이름>', 초기치)|Node 클래스에서 제공하는 파라미터 생성 메소드|
 |(node).get_parameters(['<파라미터 이름>', '<파라미터 이름>', ...])|Node 클래스에서 제공하는 파라미터들을 리스트로 받아 리스트형태로 파라미터 객체를 반환|
+|(node).add_on_set_parameters_callback(<callback>)|파라미터 변경 전 콜백 함수를 먼저 실행 시키는 메소드|
 
 ### Python Note
 - pub.publish(<data_type>())을 바로 했을 때는 초기화된 값이 들어가기 때문에 msg라는 변수로 지정해준 뒤 넣는다.
