@@ -113,6 +113,7 @@ WorkSpace/
 
 ### Package Note
 - workspace를 빌드하는 colcon builds는 해당 폴더로 가서 사용해야 함(workspace는 여러 개 존재할 수 있기 때문)
+- colcon build --packages-select <패키지이름>로 특정 패키지만 빌드 가능
 - workspace를 빌드하고 나면 install 폴더의 local_setup.bash를 source로 읽어야 빌드한 환경을 읽을 수 있음
 - 노드를 실행시킬 때, 오류가 났다면 코드 고친 뒤 빌드까지 다시 할 것
 - 파이썬과 ROS2를 이용하여 원하는 아이디어를 구현할 때는 파이썬으로 알고리즘 부분만 먼저 개발하고 그 코드를 ROS에 맞게 변환해서 적용하는 것이 효율적
