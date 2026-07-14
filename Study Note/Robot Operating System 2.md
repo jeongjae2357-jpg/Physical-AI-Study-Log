@@ -55,14 +55,14 @@
 |import rclpy as rp|ROS Client Library for Python 모듈을  임포트|
 |rp.init()|rclpy 초기화|
 |rp.create_node('노드 이름')|해당 이름을 가진 노드를 생성하여 반환
-|def callback(data):|구독 노드가 일정 주기로 발행되는 토픽을 받을 때마다 실행되는 함수를 정의|
+|def callback(data):|(1)구독 노드가 일정 주기로 발행되는 토픽을 받을 때, (2)서버 노드가 서비스를 요청 받을 때, (3)액션 서버 노드가 액션의 목표가 요청 받을 때, (4)일정 시간마다, 실행되는 함수를 정의|
 |(node).create_subscription(<data_type>, '<topic_name>', \<callback>, \<QoS History>)|노드가 해당 토픽에 구독하게 하는 메소드|
-|rp.spin(<노드>) {rp.spin_once(<노드>)}|구독한 토픽에서 발행되는 메세지를 받으면 등록된 callback 함수를 {한번만} 실행|
+|rp.spin(<노드>) {rp.spin_once(<노드>)}|해당 노드가 메세지를 받으면 등록된 callback 함수를 {한번만} **실제로** 실행|
 |pub = (node).create_publisher(<data_type>, '<topic_name>', \<QoS History>|노드가 발행하게 하는 메소드|
-|msg = <data_type>(), pub.publish(msg)|해당 메세지를 발행|
-|(node).create_timer(timer_period, timer_callback)|주기마다 callback 함수를 실행 > callback 함수 안에 토픽 발행을 구현하여 주기마다 발행하는 기능 구현 가능|
+|msg = <data_type>(), pub.publish(msg)|해당 메세지를 **실제로** 발행|
+|(node).create_timer(timer_period, timer_callback)|주기마다 실행되는 callback 함수를 구현 > callback 함수 안에 토픽 발행을 구현하여 주기마다 발행하는 기능 구현 가능|
 |cli = (node).create_client(<data_type>, '<service_name>')|해당 노드가 클라이언트 노드가 되게 하는 메소드|
-|cli.call_async(<data_type>.Request())|클라이언트 노드가 요청을 보내게 함|
+|cli.call_async(<data_type>.Request())|클라이언트 노드가 요청을 **실제로** 보내게 함|
 |cli.wait_for_service(timeout_sec)|파라미터로 설정한 시간 주기로 서비스가 실행되지 않았다면 False를 반환|
 |ActionServer(self, <data_type>, '<action_name>', callback)|해당 데이터 타입의 액션 서버를 생성하고 객체를 반환|
 |MultiThreadedExecutor()|멀티스레드 기능을 제공하는 객체를 반환|
@@ -73,6 +73,7 @@
 ### Python Note
 - pub.publish(<data_type>())을 바로 했을 때는 초기화된 값이 들어가기 때문에 msg라는 변수로 지정해준 뒤 넣는다.
 - 각 클래스들은 rclpy를 임포트해야 사용할 수 있음
+- spin()에 괄호 안에 들어가는 노드는 이벤트를 받는게 가능한 노드여야 함(ex 발행만 하는 노드는 들어갈 수 없음)
 
 ## Package
 |명령어|설명|
