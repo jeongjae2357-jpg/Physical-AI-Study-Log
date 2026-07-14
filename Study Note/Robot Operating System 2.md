@@ -28,6 +28,11 @@
 |ros2 topic echo <토픽 이름>|topic을 subscribe|
 |ros2 action list|액션 목록을 조회|
 |ros2 action send_goal \<action_name> \<action_type> "values"|액션의 목표를 지정|
+|ros2 param list| 파라미터 목록을 조회|
+|ros2 param get <노드 이름> <파라미터 이름>|파라미터의 값 확인|
+|ros2 param set <노드 이름> <파라미터 이름>|파라미터의 값 설정|
+|ros2 param dump <노드 이름> > <파일 이름.yaml>|노드의 파라미터들을 저장|
+|ros2 param load <노드 이름> > <경로/파일 이름.yaml>|노드의 파라미터들을 적용|
 
 ### Command Note
 - ROS를 실행하기 위해서는 'sudo apt install' 명령으로 설치한 패키지 환경을 /opt/ros/<버전>/ 경로에 setup.bash파일로 읽어와야 함
