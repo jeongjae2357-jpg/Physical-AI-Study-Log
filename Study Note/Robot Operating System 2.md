@@ -64,6 +64,8 @@
 |cli.wait_for_service(timeout_sec)|파라미터로 설정한 시간 주기로 서비스가 실행되지 않았다면 False를 반환|
 |ActionServer(self, <data_type>, '<action_name>', callback)|해당 데이터 타입의 액션 서버를 생성하고 객체를 반환|
 |MultiThreadedExecutor()|멀티스레드 기능을 제공하는 객체를 반환|
+|(node).declare_parameter('<파라미터 이름>', 초기치)|Node 클래스에서 제공하는 파라미터 생성 메소드|
+|(node).get_parameters(['<파라미터 이름>', '<파라미터 이름>', ...])|Node 클래스에서 제공하는 파라미터들을 리스트로 받아 리스트형태로 파라미터 객체를 반환|
 
 ### Python Note
 - pub.publish(<data_type>())을 바로 했을 때는 초기화된 값이 들어가기 때문에 msg라는 변수로 지정해준 뒤 넣는다.
@@ -111,6 +113,7 @@ WorkSpace/
 - workspace를 빌드하고 나면 install 폴더의 local_setup.bash를 source로 읽어야 빌드한 환경을 읽을 수 있음
 - 노드를 실행시킬 때, 오류가 났다면 코드 고친 뒤 빌드까지 다시 할 것
 - 파이썬과 ROS2를 이용하여 원하는 아이디어를 구현할 때는 파이썬으로 알고리즘 부분만 먼저 개발하고 그 코드를 ROS에 맞게 변환해서 적용하는 것이 효율적
+  
 ## Linux Command
 |명령어|설명|
 |--|--|
