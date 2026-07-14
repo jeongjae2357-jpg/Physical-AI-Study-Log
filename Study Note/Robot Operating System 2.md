@@ -25,7 +25,7 @@
 |ros2 topic list|현재 존재하는 토픽 목록|
 |ros2 topic type <토픽 이름>|해당 토픽의 데이터 타입|
 |ros2 topic info <토픽 이름>|해당 토픽의 데이터 타입과 publish, subscribe 상황 정보|
-|ros2 topic pub --(once or rate <hz>) \<topic_name> \<msg_type> "<args>"|topic을 publish|
+|ros2 topic pub --(once or rate <hz>) \<topic_name> \<msg_type> "\<args>"|topic을 publish|
 |ros2 topic echo <토픽 이름>|topic을 subscribe|
 |ros2 action list|액션 목록을 조회|
 |ros2 action send_goal \<action_name> \<action_type> "values"|액션의 목표를 지정|
