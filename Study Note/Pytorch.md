@@ -15,10 +15,22 @@
 ### Tensor 초기화
 |코드|설명|파라미터|
 |--|--|--|
-|torch.tensor(<tensor>)|해당 크기와 원소들을 가지는 tensor를 반환|dtype|
-|torch.empty(<shape>)|해당 크기의 빈 tensor를 반환(메모리에 크기만 잡기 때문에 들어있는 값은 기존 메모리에 있던 값임)|dtype|
-|torch.rand(<shape>)|해당 크기의 랜덤한 원소를 할당한 tensor를 반환|dtype|
-|torch.zeros(<shape>)|해당 크기의 모든 원소를 0으로 할당한 tensor를 반환|dtype|
-|<Tensor>.new_ones(<shape>)|기존 tensor와 같은 dtype, device를 사용면서 원소가 1인 tensor를 반환|dtype|
-|torch.randn_like(<Tensor>)|기존 <Tensor>와 크기가 같고 랜덤한 원소를 할당한 tensor를 반환|dtype|
-|<Tensor>.size()|<Tensor>의 크기 반환|-|
+|torch.tensor(\<tensor>)|해당 크기와 원소들을 가지는 tensor를 반환|dtype, device|
+|torch.empty(\<shape>)|해당 크기의 빈 tensor를 반환(메모리에 크기만 잡기 때문에 들어있는 값은 기존 메모리에 있던 값임)|dtype, device|
+|torch.(zeros \| ones \| rand )(\<shape>)|해당 크기의 모든 원소를 (0 \| 1 \| 랜덤)으로 할당한 tensor를 반환|dtype, device|
+|\<Tensor>.new_(zeros \| ones)(\<shape>)|기존 \<Tensor>와 같은 dtype, device를 사용하는 tensor를 반환|dtype, device|
+|torch.(zeors \| ones \| randn)_like(\<tensor>)|기존 \<tensor>와 크기가 같은 tensor를 반환|dtype, device|
+|\<Tensor>.size()|\<Tensor>의 크기 반환|-|
+
+### Tensor 데이터 타입
+|코드|설명|파라미터|
+|--|--|--|
+|torch.(cuda.)?FloatTensor(\<tensor>), torch.(cuda.)?HalfTensor(\<tensor>), torch.(cuda.)?ShortTensor(\<tensor>) ...|해당 데이터 타입을 가지는 tensor를 (VRAM에) 반환|-|
+|\<Tensor>.dtype|데이터타입을 반환|-|
+|\<Tensor>.item()|원소를 반환|-|
+|\<Tensor>.(short()\|int()\|long()...)|기존 \<Tensor>의 데이터 타입을 변환|-|
+|torch.device('cuda' if torch.cuda.is_available() else 'cpu')|cuda 사용 가능 여부에 따라 'cuda'나 'cpu'를 반환|-|
+|\<Tensor>.to(\<device>)|기존 tensor의 device를 해당 \<device>로 변환|dtype|
+
+#### Note
+- AI피셜 과거 방식이므로 torch.tensor(dtype, device)나 torch.tensor().dtype().device()나 .to로 초기화하길 권장함
