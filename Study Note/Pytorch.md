@@ -21,3 +21,4 @@
 |torch.zeros(<shape>)|해당 크기의 모든 원소를 0으로 할당한 tensor를 반환|dtype|
 |<Tensor>.new_ones(<shape>)|기존 tensor와 같은 dtype, device를 사용면서 원소가 1인 tensor를 반환|dtype|
 |torch.randn_like(<Tensor>)|기존 <Tensor>와 크기가 같고 랜덤한 원소를 할당한 tensor를 반환|dtype|
+|<Tensor>.size()|<Tensor>의 크기 반환|-|
