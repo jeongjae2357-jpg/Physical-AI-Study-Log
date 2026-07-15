@@ -54,9 +54,16 @@
 ### Tensor 조작
 |코드|설명|파라미터|
 |--|--|--|
-|\<Tensor>.view(\<크기>)|\<Tensor>의 크기를 재설정|-|
-|\<Tensor>.(squeeze\|unsqueeze)()|\<Tensor>의 크기가 1인 모든 차원을 (축소\|증가)|인덱스를 넣어 특정 인덱스만 제거 가능|
+|\<Tensor>.view(\<크기>)|\<Tensor>의 크기를 재설정한 결과를 반환|-|
+|\<Tensor>.squeeze()|\<Tensor>의 크기가 1인 모든 차원을 축소한 결과를 반환|인덱스를 넣어 특정 인덱스만 제거 가능|
+|\<Tensor>.unsqueeze(dim)|\<Tensor>의 dim에 해당하는 1 차원을 생성한 결과를 반환|-|
+|torch.stack([\<Tensor1>, \<Tensor2> ...])|크기가 같은 tensor들을 새로운 축 방향으로 쌓은 결과를 반환|-|
+|torch.cat((\<Tensor1>, \<Tensor2> ...), dim)|dim의 축을 제외한 다른 모든 축이 반드시 같은 tensor들을 dim의 축으로 결합한 결과를 반환|-|
+|torch.chunk(\<Tensor>, \<분할 개수>, dim)|\<Tensor>를 dim 축 기준으로 \<분할 개수>만큼 분할하여 각각을 반환|-|
+|torch.split(\<Tensor>, \<분할 크기>, dim)|\<Tensor>를 dim 축 기준으로 각 tensor의 크기가 \<분할 크기>가 되게하여 각각을 반환|-|
 
 #### Note
 - 인덱싱과 슬라이싱 가능
 - tensor의 크기를 재설정할 때, 원소 개수는 기존과 같아야 하고, -1을 주면 가능할 경우 컴터가 알아서 설정함
+- stack은 새로운 축 방향으로 결합하고 cat은 기존 축 방향에서 결합
+- .numpy()를 통해 넘파이로, torch.from_numpy(<배열>)을 통해 tensor로 변환 가능
