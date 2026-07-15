@@ -17,9 +17,9 @@
 |--|--|--|
 |torch.tensor(\<tensor>)|해당 크기와 원소들을 가지는 tensor를 반환|dtype, device|
 |torch.empty(\<shape>)|해당 크기의 빈 tensor를 반환(메모리에 크기만 잡기 때문에 들어있는 값은 기존 메모리에 있던 값임)|dtype, device|
-|torch.(zeros \| ones \| rand )(\<shape>)|해당 크기의 모든 원소를 (0 \| 1 \| 랜덤)으로 할당한 tensor를 반환|dtype, device|
+|torch.(zeros \| ones \| rand \| randn)(\<shape>)|해당 크기의 모든 원소를 (0 \| 1 \| 랜덤 \| 정규분포 기반 랜덤)으로 할당한 tensor를 반환|dtype, device|
 |\<Tensor>.new_(zeros \| ones)(\<shape>)|기존 \<Tensor>와 같은 dtype, device를 사용하는 tensor를 반환|dtype, device|
-|torch.(zeors \| ones \| randn)_like(\<tensor>)|기존 \<tensor>와 크기가 같은 tensor를 반환|dtype, device|
+|torch.(zeors \| ones \| rand \| randn)_like(\<tensor>)|기존 \<tensor>와 크기가 같은 tensor를 반환|dtype, device|
 |\<Tensor>.size()|\<Tensor>의 크기 반환|-|
 
 ### Tensor 데이터 타입
@@ -27,7 +27,7 @@
 |--|--|--|
 |torch.(cuda.)?FloatTensor(\<tensor>), torch.(cuda.)?HalfTensor(\<tensor>), torch.(cuda.)?ShortTensor(\<tensor>) ...|해당 데이터 타입을 가지는 tensor를 (VRAM에) 반환|-|
 |\<Tensor>.dtype|데이터타입을 반환|-|
-|\<Tensor>.item()|원소를 반환|-|
+|\<Tensor>.item()|<Tensor>에 원소가 하나만 존재할 경우 그 원소를 반환|-|
 |\<Tensor>.(short()\|int()\|long()...)|기존 \<Tensor>의 데이터 타입을 변환|-|
 |torch.device('cuda' if torch.cuda.is_available() else 'cpu')|cuda 사용 가능 여부에 따라 'cuda'나 'cpu'를 반환|-|
 |\<Tensor>.to(\<device>)|기존 tensor의 device를 해당 \<device>로 변환|dtype|
@@ -44,4 +44,19 @@
 |torch.std(\<Tensor>)|\<Tensor>의 원소들의 표준편차를 반환|-|
 |torch.prod(\<Tensor>)|\<Tensor>의 원소들의 곱을 반환|-|
 |torch.unique(\<Tensor>)|\<Tensor>의 원소들 중 유니크한 값들을 반환|-|
+|torch.matmul(\<Tensor1>, \<Tensor2>) or torch.mm(\<Tensor1>, \<Tensor2>)|\<Tensor1>과 \<Tensor2>를 내적한 값을 반환|-|
+|torch.svd(\<Tensor>)|\<Tensor>를 Singular Value Decomposition한 결과를 반환|
 |\<Tensor>.(max\|min)(dim)|해당 dim 기준으로 (최대\|최소)값을 각각 찾아 반환|-|
+
+#### Note
+- in-place 방식: \<Tensor1>.연산_(\<Tensor2>)처럼 언더바(_)를 통해 구현 가능하며, \<Tensor1>과 \<Tensor2>를 연산한 결과를 \<Tensor1>에 넣는다는 의미
+
+### Tensor 조작
+|코드|설명|파라미터|
+|--|--|--|
+|\<Tensor>.view(\<크기>)|\<Tensor>의 크기를 재설정|-|
+|\<Tensor>.(squeeze\|unsqueeze)()|\<Tensor>의 크기가 1인 모든 차원을 (축소\|증가)|인덱스를 넣어 특정 인덱스만 제거 가능|
+
+#### Note
+- 인덱싱과 슬라이싱 가능
+- tensor의 크기를 재설정할 때, 원소 개수는 기존과 같아야 하고, -1을 주면 가능할 경우 컴터가 알아서 설정함
