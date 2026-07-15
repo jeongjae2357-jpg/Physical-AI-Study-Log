@@ -9,7 +9,7 @@
 |torch.utils|데이터 조작 등의 유틸리티 기능 제공|
 |torch.onnx|ONNX(Open Neural Network Exchange), 서로 다른 프레임워크 간의 모델을 공유|
 
-## Tensor
+## Torch
 - 데이터 표현을 위한 기본 구조로 GPU를 사용한 연산 가속을 가능하게 함
 
 ### Tensor 초기화
@@ -67,3 +67,7 @@
 - tensor의 크기를 재설정할 때, 원소 개수는 기존과 같아야 하고, -1을 주면 가능할 경우 컴터가 알아서 설정함
 - stack은 새로운 축 방향으로 결합하고 cat은 기존 축 방향에서 결합
 - .numpy()를 통해 넘파이로, torch.from_numpy(<배열>)을 통해 tensor로 변환 가능
+
+## Autograd
+
+
