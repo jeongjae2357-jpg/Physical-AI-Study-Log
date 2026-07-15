@@ -34,3 +34,14 @@
 
 #### Note
 - AI피셜 과거 방식이므로 torch.tensor(dtype, device)나 torch.tensor().dtype().device()나 .to로 초기화하길 권장함
+
+### Tensor 연산
+|코드|설명|파라미터|
+|--|--|--|
+|torch.min(\<Tensor>)||<Tensor>의 원소 중 최소값을 반환|-|
+|torch.max(\<Tensor>)||<Tensor>의 원소 중 최대값을 반환|-|
+|torch.mean(\<Tensor>)||<Tensor>의 원소들의 평균을 반환|-|
+|torch.std(\<Tensor>)||<Tensor>의 원소들의 표준편차를 반환|-|
+|torch.prod(\<Tensor>)||<Tensor>의 원소들의 곱을 반환|-|
+|torch.unique(\<Tensor>)||<Tensor>의 원소들 중 유니크한 값들을 반환|-|
+|\<Tensor>.(max\|min)(dim)|해당 dim 기준으로 (최대\|최소)값을 각각 찾아 반환|-|
