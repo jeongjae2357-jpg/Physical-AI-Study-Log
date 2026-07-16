@@ -70,10 +70,11 @@
 
 ## Autograd
 ### Basic Procedure
-
-x = torch.tensor([[a, b, c], [d, e, f], [g, h, i]], require_grad=True) # require_grad=True로 하여 x
+```test
+x = torch.tensor([[a, b, c], [d, e, f], [g, h, i]], require_grad=True) # require_grad=True로 하여 x의 연산 과정을 추적
 --연산--
-result.backward()
-
+result.backward() # 역전파를 구하고 싶은 기준 결과에서 backward() 메소드 시행하여 역방향으로 gradient 계산을 시행
+x.grad # 역전파 결과로 연산을 추적하기 시작했던 tensor의 grad 변수에 \frac{}
+```
 
 
