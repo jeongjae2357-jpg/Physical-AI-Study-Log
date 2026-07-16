@@ -85,3 +85,8 @@
 |\<Tensor>.backward()|역방향으로 gradient 계산을 시행|\<Vector>를 넣어 초기 gradient 설정 가능|
 |\<Tensor>.grad|역전파 결과를 반환|-|
 |\<Tensor>,grad_fn|추적한 연산을 반환|-|
+|with torch.no_grad(): |해당 블럭 안에서는 autograd를 기록하지 않음|-|
+|\<Tensor>.detach()|<Tensor>의 데이터는 유지하나 기존 gradient 계산 그래프를 분리한 tensor를 반환|-|
+
+#### Code Note
+- 역전파 과정 중 chain rule에 따라 중간 연산도 수행되긴 하지만 그 값은 grad에 저장되지 않음
