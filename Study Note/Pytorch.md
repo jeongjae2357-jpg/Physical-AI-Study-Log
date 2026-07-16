@@ -15,11 +15,11 @@
 ### Tensor 초기화
 |코드|설명|파라미터|
 |--|--|--|
-|torch.tensor(\<tensor>)|해당 크기와 원소들을 가지는 tensor를 반환|dtype, device|
-|torch.empty(\<shape>)|해당 크기의 빈 tensor를 반환(메모리에 크기만 잡기 때문에 들어있는 값은 기존 메모리에 있던 값임)|dtype, device|
-|torch.(zeros \| ones \| rand \| randn)(\<shape>)|해당 크기의 모든 원소를 (0 \| 1 \| 랜덤 \| 정규분포 기반 랜덤)으로 할당한 tensor를 반환|dtype, device|
-|\<Tensor>.new_(zeros \| ones)(\<shape>)|기존 \<Tensor>와 같은 dtype, device를 사용하는 tensor를 반환|dtype, device|
-|torch.(zeors \| ones \| rand \| randn)_like(\<tensor>)|기존 \<tensor>와 크기가 같은 tensor를 반환|dtype, device|
+|torch.tensor(\<tensor>)|해당 크기와 원소들을 가지는 tensor를 반환|dtype, device, require_grad|
+|torch.empty(\<shape>)|해당 크기의 빈 tensor를 반환(메모리에 크기만 잡기 때문에 들어있는 값은 기존 메모리에 있던 값임)|dtype, device, require_grad|
+|torch.(zeros \| ones \| rand \| randn)(\<shape>)|해당 크기의 모든 원소를 (0 \| 1 \| 랜덤 \| 정규분포 기반 랜덤)으로 할당한 tensor를 반환|dtype, device, require_grad|
+|\<Tensor>.new_(zeros \| ones)(\<shape>)|기존 \<Tensor>와 같은 dtype, device를 사용하는 tensor를 반환|dtype, device, require_grad|
+|torch.(zeors \| ones \| rand \| randn)_like(\<tensor>)|기존 \<tensor>와 크기가 같은 tensor를 반환|dtype, device, require_grad|
 |\<Tensor>.size()|\<Tensor>의 크기 반환|-|
 
 ### Tensor 데이터 타입
@@ -70,11 +70,18 @@
 
 ## Autograd
 ### Basic Procedure
-```test
-x = torch.tensor([[a, b, c], [d, e, f], [g, h, i]], require_grad=True) # require_grad=True로 하여 x의 연산 과정을 추적
---연산--
-result.backward() # 역전파를 구하고 싶은 기준 결과에서 backward() 메소드 시행하여 역방향으로 gradient 계산을 시행
-x.grad # 역전파 결과로 연산을 추적하기 시작했던 tensor의 grad 변수에 \frac{}
-```
+1. **x = torch.tensor([[a, b, c], [d, e, f], [g, h, i]], require_grad=True)**  
+   \# require_grad=True로 하여 x의 연산 과정을 추적
+2. **--연산--**
+3. **result.backward()**  
+   \# 역전파를 구하고 싶은 기준 결과에서 backward() 메소드 시행하여 역방향으로 gradient 계산을 시행
+4. **x.grad**  
+   \# 역전파 결과로 연산을 추적하기 시작했던 tensor의 grad 변수에 $\frac{\partial result}{\partial x}$ 값을 저장
 
-
+### Code
+|코드|설명|파라미터|
+|--|--|--|
+|torch.tensor(<tensor>, require_grad), <Tensor>.require_grad_(<bool>), |gradient 계산 그래프를 그리길 시작 여부를 설정 (기본 False)|-|
+|<Tensor>.backward()|역방향으로 gradient 계산을 시행|<Vector>를 넣어 초기 gradient 설정 가능|
+|<Tensor>.grad|역전파 결과를 반환|-|
+|<Tensor>,grad_fn|추적한 연산을 반환|-|
