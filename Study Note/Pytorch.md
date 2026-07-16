@@ -81,7 +81,7 @@
 ### Code
 |코드|설명|파라미터|
 |--|--|--|
-|torch.tensor(<tensor>, require_grad), <Tensor>.require_grad_(<bool>), |gradient 계산 그래프를 그리길 시작 여부를 설정 (기본 False)|-|
-|<Tensor>.backward()|역방향으로 gradient 계산을 시행|<Vector>를 넣어 초기 gradient 설정 가능|
-|<Tensor>.grad|역전파 결과를 반환|-|
-|<Tensor>,grad_fn|추적한 연산을 반환|-|
+|torch.tensor(\<tensor>, require_grad), \<Tensor>.require_grad_(\<bool>), |gradient 계산 그래프를 그리길 시작 여부를 설정 (기본 False)|-|
+|\<Tensor>.backward()|역방향으로 gradient 계산을 시행|\<Vector>를 넣어 초기 gradient 설정 가능|
+|\<Tensor>.grad|역전파 결과를 반환|-|
+|\<Tensor>,grad_fn|추적한 연산을 반환|-|
