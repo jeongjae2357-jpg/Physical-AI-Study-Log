@@ -69,5 +69,11 @@
 - .numpy()를 통해 넘파이로, torch.from_numpy(<배열>)을 통해 tensor로 변환 가능
 
 ## Autograd
+### Basic Procedure
+
+x = torch.tensor([[a, b, c], [d, e, f], [g, h, i]], require_grad=True) # require_grad=True로 하여 x
+--연산--
+result.backward()
+
 
 
