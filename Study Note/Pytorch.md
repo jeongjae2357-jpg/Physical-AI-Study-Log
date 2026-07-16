@@ -9,7 +9,7 @@
 |torch.utils|데이터 조작 등의 유틸리티 기능 제공|
 |torch.onnx|ONNX(Open Neural Network Exchange), 서로 다른 프레임워크 간의 모델을 공유|
 
-## Torch
+## Tensor
 - 데이터 표현을 위한 기본 구조로 GPU를 사용한 연산 가속을 가능하게 함
 
 ### Tensor 초기화
@@ -70,7 +70,7 @@
 
 ## Autograd
 ### Basic Procedure
-1. **x = torch.tensor([[a, b, c], [d, e, f], [g, h, i]], require_grad=True)**  
+1. **x = torch.tensor([[a, b, c], [d, e, f], [g, h, i]], require_grad=True)**  기본 절차
    \# require_grad=True로 하여 x의 연산 과정을 추적
 2. **--연산--**
 3. **result.backward()**  
@@ -90,3 +90,11 @@
 
 #### Code Note
 - 역전파 과정 중 chain rule에 따라 중간 연산도 수행되긴 하지만 그 값은 grad에 저장되지 않음
+
+## Handling Data 
+### Module
+- from torch.utils.data import Dataset, DataLoader
+- **torchvision:** 컴퓨터 비전과 관련된 작업을 지원하는 라이브러리
+   - **datasets:** 이미지 데이터셋 제공
+   - **transforms:** 이미지 전처리 기능 제공
+   - **models:** 사전 학습된 이미지 모델 제공
