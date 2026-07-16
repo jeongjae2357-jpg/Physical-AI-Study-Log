@@ -94,7 +94,7 @@
 ## Handling Data 
 ### Module
 - **torch.utils.data:** 여러 도구 모음
-     - **Dataset:** 데이터를 어떻게 가져오는지를 정의한 클래스
+     - **Dataset:** 데이터를 어떻게 가져오는지를 정의한 클래스데이터 다루기
      - **DataLoader:** batch, shuffle 등을 다루는 클래스
 - **torchvision:** 컴퓨터 비전과 관련된 작업을 지원하는 라이브러리
    - **datasets:** 이미지 데이터셋 제공
@@ -116,3 +116,5 @@
 - num_workers는 데이터를 가져오는 작업을 몇 개의 프로세스가 동시에 할 것인지를 정함
 - \<DataLoader>는 데이터를 Dataset으로부터 가져와 모델에게 batch만큼씩 제공함
 - for문도 내부적으로 iter()을 실행한다 함
+
+## Neural network
