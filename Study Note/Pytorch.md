@@ -93,8 +93,26 @@
 
 ## Handling Data 
 ### Module
-- from torch.utils.data import Dataset, DataLoader
+- **torch.utils.data:** 여러 도구 모음
+     - **Dataset:** 데이터를 어떻게 가져오는지를 정의한 클래스
+     - **DataLoader:** batch, shuffle 등을 다루는 클래스
 - **torchvision:** 컴퓨터 비전과 관련된 작업을 지원하는 라이브러리
    - **datasets:** 이미지 데이터셋 제공
    - **transforms:** 이미지 전처리 기능 제공
    - **models:** 사전 학습된 이미지 모델 제공
+
+### Code
+|코드|설명|파라미터|
+|--|--|--|
+|transforms.Compose([\<전처리1>, \<전처리2>, ...])|여러 전처리들을 하나의 전처리 파이프라인으로 묶은 \<Transform> 객체를 반환|-|
+|transforms.ToTensor()|torchvision이 처리하는 이미지 형태로 변환|-|
+|transforms.Normalize(mean, std)|입력 데이터를 정규화하여 반환|-|
+|DataLoader(\<dataset>, batch_size, shuffle, num_workers)|어느 \<dataset>인지, batch 크기, shuffle여부, num_workers 설정들을 저장한 \<DataLoader> 객체를 반환|-|
+|iter(\<DataLoader>)|데이터를 순회하는 \<Iterator> 객체를 반환|-|
+|next(\<Iterator>)|현 데이터 위치를 기억하고 있는 \<Iterator>객체에서 다음 데이터를 반환|-|
+
+#### Note
+- batch로 모델이 한번에 처리하는 데이터 개수를 조절하는 이유는 메모리 부족 현상이 발생할 수 있기 때문이다.
+- num_workers는 데이터를 가져오는 작업을 몇 개의 프로세스가 동시에 할 것인지를 정함
+- \<DataLoader>는 데이터를 Dataset으로부터 가져와 모델에게 batch만큼씩 제공함
+- for문도 내부적으로 iter()을 실행한다 함
