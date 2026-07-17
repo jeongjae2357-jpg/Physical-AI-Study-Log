@@ -118,3 +118,10 @@
 - for문도 내부적으로 iter()을 실행한다 함
 
 ## Neural network
+### Code
+- import torch.nn as nn
+|코드|설명|파라미터|
+|--|--|--|
+|nn.Linear(\<입력 차원>, \<출력 차원>)| tensor x를 입력 받아 xW^T + b 연산을 수행하는 Fully Connected layer를 생성|
+#### Note
+- Layer들의 초기 weight와 bias은 랜덤으로 설정되고 후에 학습을 통해 Loss를 최소화하는 방향으로 재설정 되어감
