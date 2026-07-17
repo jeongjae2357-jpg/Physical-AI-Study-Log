@@ -120,8 +120,11 @@
 ## Neural network
 ### Code
 - import torch.nn as nn
-|코드|설명|파라미터|
+|코드|설명|입력 tensor|
 |--|--|--|
-|nn.Linear(\<입력 차원>, \<출력 차원>)| tensor x를 입력 받아 xW^T + b 연산을 수행하는 Fully Connected layer를 생성|
+|nn.Linear(\<입력 차원>, \<출력 차원>)| tensor x를 입력 받아 xW^T + b 연산을 수행하는 Fully Connected layer를 생성|tensor의 마지막 차원을 입력 차원으로 간주|
+|nn.Conv2d(\<입력 차원>, \<출력 차원>, kernel_size, stride, padding, bias)| tensor를 입력 받아 합성곱 연산을 수행하는 Convolution layer를 생성|(N, C, H, W) 형식의 tensor만 입력 받을 수 있음|
+|\<Layer>(\<Tensor>)|해당 layer에 tensor를 입력하여 출력|-|
+
 #### Note
 - Layer들의 초기 weight와 bias은 랜덤으로 설정되고 후에 학습을 통해 Loss를 최소화하는 방향으로 재설정 되어감
