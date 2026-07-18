@@ -129,9 +129,9 @@
 |nn.MaxPool2d(kernel_size, stride)| tensor를 입력 받아 max pooling을 수행하는 layer를 생성|-|
 |F.max_pool2d(\<Tensor>, kernel_size, stride)| \<Tensor>를 입력 받아 max pooling을 수행한 결과를 반환|-|
 |F.softmax(\<Tensor>, dim)|입력 \<Tensor>를 dim 축 기준으로 확률분포로 바꿔준 결과를 반환|-|
+|F.relu(\<Tensor>, dim)|입력 \<Tensor>의 원소 중 음수는 0으로 바꿔준 결과를 반환|-|
 |\<Layer>(\<Tensor>)|해당 layer에 tensor를 입력하여 출력|-|
 |\<Layer>.weight|해당 layer의 파라미터를 \<Tensor>를 상속한 클래스로 반환|-|
-
 
 #### Note
 - Layer들의 초기 weight와 bias은 랜덤으로 설정되고 후에 학습을 통해 Loss를 최소화하는 방향으로 재설정 되어감
