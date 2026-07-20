@@ -127,6 +127,7 @@
 |nn.Linear(\<입력 차원>, \<출력 차원>)| tensor x를 입력 받아 xW^T + b 연산을 수행하는 Fully Connected layer를 생성|tensor의 마지막 차원을 입력 차원으로 간주|
 |nn.Conv2d(\<입력 차원>, \<출력 차원>, kernel_size, stride, padding, bias)| tensor를 입력 받아 합성곱 연산을 수행하는 Convolution layer를 생성|(N, C, H, W) 형식의 tensor만 입력 받을 수 있음|
 |nn.MaxPool2d(kernel_size, stride)| tensor를 입력 받아 max pooling을 수행하는 layer를 생성|-|
+|nn.Sigmoid()| sigmoid 함수를 반환|
 |F.max_pool2d(\<Tensor>, kernel_size, stride)| \<Tensor>를 입력 받아 max pooling을 수행한 결과를 반환|-|
 |F.softmax(\<Tensor>, dim)|입력 \<Tensor>를 dim 축 기준으로 확률분포로 바꿔준 결과를 반환|-|
 |F.relu(\<Tensor>, dim)|입력 \<Tensor>의 원소 중 음수는 0으로 바꿔준 결과를 반환|-|
@@ -144,3 +145,9 @@
 - forward() 메소드를 Override 해야 함
 - __init()__에서는 모델에 구성될 레이어와 필요 구성 요소를 정의
 - forward()에서는 입력 데이터가 각 레이어를 통과하는 순전파 과정을 정의
+
+### Code
+|코드|설명|
+|--|--|
+|\<Model>.children()|현재 모델의 직속 하위 모듈들을 반환|
+|\<Model>.modules()|자기 자신을 포함하여 하위 모듈들을 재귀적으로 탐색|
