@@ -128,6 +128,7 @@
 |nn.Conv2d(\<입력 차원>, \<출력 차원>, kernel_size, stride, padding, bias)| tensor를 입력 받아 합성곱 연산을 수행하는 Convolution layer를 생성|(N, C, H, W) 형식의 tensor만 입력 받을 수 있음|
 |nn.MaxPool2d(kernel_size, stride)| tensor를 입력 받아 max pooling을 수행하는 layer를 생성|-|
 |nn.Sigmoid()| sigmoid 함수를 반환|
+|nn.ReLU()| relu 함수를 반환|
 |F.max_pool2d(\<Tensor>, kernel_size, stride)| \<Tensor>를 입력 받아 max pooling을 수행한 결과를 반환|-|
 |F.softmax(\<Tensor>, dim)|입력 \<Tensor>를 dim 축 기준으로 확률분포로 바꿔준 결과를 반환|-|
 |F.relu(\<Tensor>, dim)|입력 \<Tensor>의 원소 중 음수는 0으로 바꿔준 결과를 반환|-|
@@ -138,6 +139,7 @@
 - Layer들의 초기 weight와 bias은 랜덤으로 설정되고 후에 학습을 통해 Loss를 최소화하는 방향으로 재설정 되어감
 - Conv2d는 2d 이미지를 다루기 때문에, kernel_size나 stride, padding에 숫자 하나 넣으면 자동으로 정사각 크기로 만들어 줌
 - 파라미터는 .detach()로 꺼내줘야 numpy() 변환 가능
+- nn으로 불러오는 것은 모듈 방식이고 F로 불러오는 것은 함수 방식
 
 ## Model
 ### Structure
