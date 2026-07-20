@@ -135,8 +135,9 @@
 |F.relu(\<Tensor>, dim)|입력 \<Tensor>의 원소 중 음수는 0으로 바꿔준 결과를 반환|-|
 |\<Layer>(\<Tensor>)|해당 layer에 tensor를 입력하여 출력|-|
 |\<Layer>.weight|해당 layer의 파라미터를 \<Tensor>를 상속한 클래스로 반환|-|
+|nn.Sequential(\<Layer1>, \<Layer2>, ...)| 여러 레이어를 순서대로 연결해 하나의 모델처럼 만들어 줌|-|
 
-#### Note
+##### Note
 - Layer들의 초기 weight와 bias은 랜덤으로 설정되고 후에 학습을 통해 Loss를 최소화하는 방향으로 재설정 되어감
 - Conv2d는 2d 이미지를 다루기 때문에, kernel_size나 stride, padding에 숫자 하나 넣으면 자동으로 정사각 크기로 만들어 줌
 - 파라미터는 .detach()로 꺼내줘야 numpy() 변환 가능
@@ -165,5 +166,23 @@
 |nn.CrossEntropyLoss()|다중 클래스 분류 문제에서 사용되는 Cross Entropy Loss 함수를 반환|
 |nn.MSELoss()|회귀 문제에서 사용되는 Mean Squared Error Loss 함수를 반환|
 
-#### Note
+##### Note
 - 평균 제곱 오차 함수 처럼 절대값이 아닌 제곱을 사용하게 되면 미분가능 + 큰 오차를 강조하는 이점이 있다
+
+### Optimizer
+#### Code
+- import torch.optim as op  
+
+|코드|설명|
+|--|--|
+|op.SGD(\<Model>.parameters(), lr)|Stochastic Gradient Descent 객체를 반환|
+|op.Adam(\<Model>.parameters(), lr)|Adaptive Learning Rate Opimizer 객체를 반환|
+|op.AdamW(\<Model>.parameters(), lr)|weight decay를 개선한 Adam 객체를 반환|
+|\<Optimizer>.zero_grad()|저장된 grad를 초기화|
+|\<Optimizer>.step()|계산된 grad를 이용해 parameter를 업데이트|
+
+##### Note
+- lr은 learning rate로 역전파로 계산된 grad의 반대 방향으로 parameter를 어느정도 수치로 변경할 지를 정함
+- pytorch는 grad가 자동으로 누적되기 때문에, 매 iteration마다 초기화 메소드를 사용함
+- \<Optimizer>는 모델에 포함되지 않음 -> 따로 생성함
+- AI 피셜 Adam optimizer는 SGD가 모든 weight를 같은 learning rate로 이동시켰던 점을 각 weight마다 적절한 이동량을 자동 조절하는 것으로 개선시켰다 함
