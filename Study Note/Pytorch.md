@@ -118,9 +118,10 @@
 - for문도 내부적으로 iter()을 실행한다 함
 
 ## Neural network
-### Code
+### Layer 
+#### Code
 - import torch.nn as nn
-- import torch.nn.functional as F
+- import torch.nn.functional as F  
 
 |코드|설명|입력 tensor|
 |--|--|--|
@@ -141,15 +142,28 @@
 - 파라미터는 .detach()로 꺼내줘야 numpy() 변환 가능
 - nn으로 불러오는 것은 모듈 방식이고 F로 불러오는 것은 함수 방식
 
-## Model
-### Structure
+### Model
+#### Structure
 - torch.nn.Module을 상속 받는 클래스
 - forward() 메소드를 Override 해야 함
 - __init()__에서는 모델에 구성될 레이어와 필요 구성 요소를 정의
 - forward()에서는 입력 데이터가 각 레이어를 통과하는 순전파 과정을 정의
 
-### Code
+#### Code
 |코드|설명|
 |--|--|
 |\<Model>.children()|현재 모델의 직속 하위 모듈들을 반환|
 |\<Model>.modules()|자기 자신을 포함하여 하위 모듈들을 재귀적으로 탐색|
+
+### Loss
+#### Code
+- import torch.nn as nn  
+
+|코드|설명|
+|--|--|
+|nn.BCELoss()|이진 분류 문제에서 사용되는 Binary Cross Entropy Loss 함수를 반환, 확률을 입력 받음|
+|nn.CrossEntropyLoss()|다중 클래스 분류 문제에서 사용되는 Cross Entropy Loss 함수를 반환|
+|nn.MSELoss()|회귀 문제에서 사용되는 Mean Squared Error Loss 함수를 반환|
+
+#### Note
+- 평균 제곱 오차 함수 처럼 절대값이 아닌 제곱을 사용하게 되면 미분가능 + 큰 오차를 강조하는 이점이 있다
