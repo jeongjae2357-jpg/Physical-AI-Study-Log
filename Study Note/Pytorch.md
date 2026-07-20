@@ -137,3 +137,10 @@
 - Layer들의 초기 weight와 bias은 랜덤으로 설정되고 후에 학습을 통해 Loss를 최소화하는 방향으로 재설정 되어감
 - Conv2d는 2d 이미지를 다루기 때문에, kernel_size나 stride, padding에 숫자 하나 넣으면 자동으로 정사각 크기로 만들어 줌
 - 파라미터는 .detach()로 꺼내줘야 numpy() 변환 가능
+
+## Model
+### Structure
+- torch.nn.Module을 상속 받는 클래스
+- forward() 메소드를 Override 해야 함
+- __init()__에서는 모델에 구성될 레이어와 필요 구성 요소를 정의
+- forward()에서는 입력 데이터가 각 레이어를 통과하는 순전파 과정을 정의
