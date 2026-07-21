@@ -201,6 +201,7 @@
 - lr은 learning rate로 역전파로 계산된 grad의 반대 방향으로 parameter를 어느정도 수치로 변경할 지를 정함
 - pytorch는 grad가 자동으로 누적되기 때문에, 매 iteration마다 초기화 메소드를 사용함
 - \<Optimizer>는 모델에 포함되지 않음 -> 따로 생성함
+- \<Optimizer>.step()은 원본을 직접 수정함
 - AI 피셜 Adam optimizer는 SGD가 모든 weight를 같은 learning rate로 이동시켰던 점을 각 weight마다 적절한 이동량을 자동 조절하는 것으로 개선시켰다 함
 - accuracy 파라미터로 줄 수 있는 task로 "binary", "multiclass", "multilabel" 등이 있다.
 - \<Accuracy>(\<Tensor preds>, \<Tensor target>)를 실행하면 \<Accuracy>.update(\<Tensor preds>, \<Tensor target>)가 암시적으로 실행되는 것과 같기에 출력한 데이터가 자동 누적됨
