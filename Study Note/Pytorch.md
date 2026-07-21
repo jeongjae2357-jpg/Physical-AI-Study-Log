@@ -102,6 +102,8 @@
    - **models:** 사전 학습된 이미지 모델 제공
 
 ### Code
+- import torchvision.transforms as transforms
+
 |코드|설명|파라미터|
 |--|--|--|
 |transforms.Compose([\<전처리1>, \<전처리2>, ...])|여러 전처리들을 하나의 전처리 파이프라인으로 묶은 \<Transform> 객체를 반환|-|
@@ -142,6 +144,7 @@
 - Conv2d는 2d 이미지를 다루기 때문에, kernel_size나 stride, padding에 숫자 하나 넣으면 자동으로 정사각 크기로 만들어 줌
 - 파라미터는 .detach()로 꺼내줘야 numpy() 변환 가능
 - nn으로 불러오는 것은 모듈 방식이고 F로 불러오는 것은 함수 방식
+- Convolution의 필터 하나가 곧 출력 하나를 만들어 냄으로 필터 개수가 출력 개수이다. 또한 필터를 거치면 여러 원소가 하나의 원소로 압축 되기에 필터의 차원은 입력의 차원가 항상 같을 수 밖에 없다.
 
 ### Model
 #### Structure
