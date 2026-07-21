@@ -171,7 +171,8 @@
 
 ### Optimizer
 #### Code
-- import torch.optim as op  
+- import torch.optim as op
+- import torchmetrics
 
 |Optimizer 코드|설명|
 |--|--|
@@ -188,8 +189,18 @@
 |op.lr_schefuler.ReduceLROnPlateau(\<Optimizer>, patience, factor)|patience만큼 성능 향상이 없을 factor 비율만큼 경우 학습률 감소|
 |op.lr_schefuler.CosineAnnealingLR(\<Optimizer>, T_max, eta_min)|T_max 동안 cosine 형태로 최소 eta_min으로 두고 학습률 감소|
 
+|Metrics 코드|설명|
+|--|--|
+|torchmetrics.functional.accuracy(\<Tensor preds>, \<Tensor target>, task, num_classes)|주어진 task 기준에 따라 예측과 정답을 비교해 그 accuracy (= 맞은 개수/정답 개수)를 출력|
+|torchmetrics.Accuracy(tast, num_class)|주어진 task 기준에 따라 예측과 정답을 비교해 그 accuracy (= 맞은 개수/정답 개수)를 계산하는 객체를 반환|
+|\<Accuracy>(\<Tensor preds>, \<Tensor target>)|\<Accuracy> 객체로 예측과 정답을 비교하여 accuracy를 출력하는 코드|
+|\<Accuracy>.compute()|현재까지 누적된 맞은 개수와 정답 개수들을 계산하여 accuracy를 출력|
+|\<Accuracy>.reset()|누적된 맞은 개수와 정답 개수들을 초기화|
+
 ##### Note
 - lr은 learning rate로 역전파로 계산된 grad의 반대 방향으로 parameter를 어느정도 수치로 변경할 지를 정함
 - pytorch는 grad가 자동으로 누적되기 때문에, 매 iteration마다 초기화 메소드를 사용함
 - \<Optimizer>는 모델에 포함되지 않음 -> 따로 생성함
 - AI 피셜 Adam optimizer는 SGD가 모든 weight를 같은 learning rate로 이동시켰던 점을 각 weight마다 적절한 이동량을 자동 조절하는 것으로 개선시켰다 함
+- accuracy 파라미터로 줄 수 있는 task로 "binary", "multiclass", "multilabel" 등이 있다.
+- \<Accuracy>(\<Tensor preds>, \<Tensor target>)를 실행하면 \<Accuracy>.update(\<Tensor preds>, \<Tensor target>)가 암시적으로 실행되는 것과 같기에 출력한 데이터가 자동 누적됨
