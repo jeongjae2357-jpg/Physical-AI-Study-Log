@@ -50,6 +50,7 @@
 
 #### Note
 - in-place 방식: \<Tensor1>.연산_(\<Tensor2>)처럼 언더바(_)를 통해 구현 가능하며, \<Tensor1>과 \<Tensor2>를 연산한 결과를 \<Tensor1>에 넣는다는 의미
+- 반환이 두 개 이상인 경우 변수명을 언더바(_)로 하여 생략 가능 ex) _, predicted = torch.max(outputs, -1)
 
 ### Tensor 조작
 |코드|설명|파라미터|
