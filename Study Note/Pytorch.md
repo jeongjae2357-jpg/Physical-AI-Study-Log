@@ -96,7 +96,7 @@
 ### Module
 - **torch.utils.data:** 여러 도구 모음
      - **Dataset:** 데이터를 어떻게 가져오는지를 정의한 클래스데이터 다루기
-     - **DataLoader:** batch, shuffle 등을 다루는 클래스
+     - **DataLoader:** 데이터셋을 묶어 학습하기 좋은 형태로 다루기
 - **torchvision:** 컴퓨터 비전과 관련된 작업을 지원하는 라이브러리
    - **datasets:** 이미지 데이터셋 제공
    - **transforms:** 이미지 전처리 기능 제공
