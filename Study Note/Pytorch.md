@@ -189,10 +189,11 @@
 
 |lr scheduler 코드|설명|
 |--|--|
-|op.lr_schefuler.StepLR(\<Optimizer>, step_size, gamma)|step_size마다 학습률을 gamma 비율만큼 감소|
-|op.lr_schefuler.ExponentialLR(\<Optimizer>, gamma)|매 epoch마다 학습률을 gamma 비율만큼 감소|
-|op.lr_schefuler.ReduceLROnPlateau(\<Optimizer>, patience, factor)|patience만큼 성능 향상이 없을 factor 비율만큼 경우 학습률 감소|
-|op.lr_schefuler.CosineAnnealingLR(\<Optimizer>, T_max, eta_min)|T_max 동안 cosine 형태로 최소 eta_min으로 두고 학습률 감소|
+|op.lr_scheduler.StepLR(\<Optimizer>, step_size, gamma)|step_size마다 학습률을 gamma 비율만큼 감소|
+|op.lr_scheduler.ExponentialLR(\<Optimizer>, gamma)|매 epoch마다 학습률을 gamma 비율만큼 감소|
+|op.lr_scheduler.ReduceLROnPlateau(\<Optimizer>, patience, factor)|patience만큼 성능 향상이 없을 factor 비율만큼 경우 학습률 감소|
+|op.lr_scheduler.CosineAnnealingLR(\<Optimizer>, T_max, eta_min)|T_max 동안 cosine 형태로 최소 eta_min으로 두고 학습률 감소|
+|\<Scheduler>.step()|<Scheduler>를 적용|
 
 |Metrics 코드|설명|
 |--|--|
