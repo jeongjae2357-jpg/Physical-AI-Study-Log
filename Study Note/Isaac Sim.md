@@ -34,7 +34,6 @@
 
 ### Note
 - Issac Sim 6.0.1버전 기준으로 작성되었음
-- 화면상에 보이는 stage에서 Scope Type은 폴더 개념으로 보면 됨
 
 ## Omni Graph
 ### Action Graph
