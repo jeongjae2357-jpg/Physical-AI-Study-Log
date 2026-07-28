@@ -18,3 +18,4 @@
 
 ## 로봇 로드 (6.0.1 기준)
 - Content -> Isaac Sim > Robots 폴더에서 원하는 로봇의 .usd 파일을 끌어 옴
+- Create > Robots > Asset Browser
