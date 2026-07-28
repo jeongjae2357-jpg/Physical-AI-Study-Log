@@ -1,12 +1,14 @@
 # Isaac Sim
-## 기본 조작법
+## Interface
 ### 객체 조작
 |조작법|설명|
 |--|--|
 |Create 탭> \<원하는 Object>|Object 생성|
 |Move(W), Rotate(E), Scale(R)|객체 조작|
 |1. Create 탭> Xform <br> 2. <원하는 Object 집어 넣기>|Object 그룹화|
-|1. Create 탭> Physics 탭> Physics Scene <br> 2. <물리 엔진 적용하고자 하는 객체> -> Property > Add > Physics > Rigid Body with Colliders Preset|물리 엔진 설정 및 적용|
+|1. Create 탭> Physics > Physics Scene <br> 2. <물리 엔진 적용하고자 하는 객체> -> Property > Add > Physics > Rigid Body with Colliders Preset|물리 엔진 설정 및 적용|
+|Content -> 폴더: Isaac Sim > Robots > \<원하는 로봇의 .usd 파일 끌어 옴 or <br> Create 탭 > Robots > Asset Browser|로봇 로드|
+|1. 연결하길 원하는 객첵들 선택 <br> 2. Create 탭 > Physics > Joint > \<원하는 Joint 선택> |관절 연결| 
 
 ### 카메라 조작
 |조작법|설명|
@@ -18,9 +20,6 @@
 |\<F>|Object로 카메라 초기화|
 
 ## 로봇 조작 (6.0.1 기준)
-### 로봇 로드 
-- Content -> Isaac Sim > Robots 폴더에서 원하는 로봇의 .usd 파일을 끌어 옴
-- Create 탭 > Robots > Asset Browser
 
 ### 로봇 조인트
 - Tools 탭 > Robotics > Joint Inspector
