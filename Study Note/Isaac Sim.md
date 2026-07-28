@@ -1,6 +1,6 @@
 # Isaac Sim
 ## Interface
-### Type
+### 개념
 - **Scope:** 폴더와 같이 정리를 도와주는 보조 장치
 - **Mesh:** 물체
 - **PhysicsScene:** 물리 엔진
@@ -9,7 +9,6 @@
     - **Revolute Joint:** 회전의 자유도를 가지는 관절
 - **OmniGraph:** 각종 3D 그래픽과 시뮬레이션을 위한 생태계인 Omniverse에서 데이터와 실행 흐름을 시각적인 그래프로 프로그래밍하는 프레임 워크
   
-
 ### 객체 조작
 |조작법|설명|
 |--|--|
@@ -38,3 +37,14 @@
 ## Omni Graph
 ### Action Graph
 - 이벤트 트리거에 의한 동작을 관리하는 실행 흐름을 정의하는 그래프 
+#### Node
+- **Differential Controller:** 두 개의 바퀴가 달린 로봇의 선속도와 각속도를 입력 받아 필요한 바퀴의 회전 속도 계산 결과를 출력
+- **Articulation Controller:** 로봇의 관절에 대해 목표 속도, 목표 위치, 힘 등을 입력 받아 실행 명령을 주어 실제 장치를 움직임
+- **Constant Token:**
+- **Make Array:**
+- **On Playback Tick:**
+
+### Note
+- 노드의 여러 설정은 Property에서 할 수 있음
+- 노드의 입력이나 출력 부분에 마우스를 가져다 대면 처리할 수 있는 데이터 타입을 알 수 있음
+- 마치 코드에서 변수를 쓰는 것처럼 바로 Property에 직접 입력하는 것보다는 따로 Token 같은 데이터 저장 노드를 만들어 이용하는 것이 관리 측면에서 더 좋음
