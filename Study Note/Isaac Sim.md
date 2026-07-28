@@ -6,7 +6,8 @@
 |Create 탭> \<원하는 Object>|Object 생성|
 |Move(W), Rotate(E), Scale(R)|객체 조작|
 |1. Create 탭> Xform <br> 2. <원하는 Object 집어 넣기>|Object 그룹화|
-|Create 탭> Physics 탭> Physics Scene|물리 엔진 설정|
+|1. Create 탭> Physics 탭> 2. Physics Scene <br> <물리 엔진 적용하고자 하는 객체> -> Property > Add > Physics > Rigid Body with Colliders Preset|물리 엔진 설정 및 적용|
+
 ### 카메라 조작
 |조작법|설명|
 |--|--|
