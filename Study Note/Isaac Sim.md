@@ -20,6 +20,7 @@
 |1. 연결하길 원하는 객첵들 선택 <br> 2. Create 탭 > Physics > Joint > \<원하는 Joint 선택> |관절 연결| 
 |1. Create 탭 > Camera <br> 2. Window 탭 > Viewports <br> 3. 새로운 화면의 Perspective -> Camera |카메라 생성 및 카메라 시점으로 보기|
 |Window 탭 > Graph Editors > Action Graph |액션 그래프 띄우기|
+|Tools 탭 > Robotics > OmniGraph Controllers|기본 제공 OmniGraph|
 
 ### 카메라 조작
 |조작법|설명|
@@ -40,9 +41,9 @@
 #### Node
 - **Differential Controller:** 두 개의 바퀴가 달린 로봇의 선속도와 각속도를 입력 받아 필요한 바퀴의 회전 속도 계산 결과를 출력
 - **Articulation Controller:** 로봇의 관절에 대해 목표 속도, 목표 위치, 힘 등을 입력 받아 실행 명령을 주어 실제 장치를 움직임
-- **Constant Token:**
-- **Make Array:**
-- **On Playback Tick:**
+- **Constant Token:** Token 형태로 저장하는 노드
+- **Make Array:** 배열 만들어주는 노드
+- **On Playback Tick:** 매 프레임마다 신호(Tick)을 보내는 노드(Clock 생각하면 됨)
 
 ### Note
 - 노드의 여러 설정은 Property에서 할 수 있음
