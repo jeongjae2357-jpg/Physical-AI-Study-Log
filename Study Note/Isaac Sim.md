@@ -44,6 +44,9 @@
 - **Constant Token:** Token 형태로 저장하는 노드
 - **Make Array:** 배열 만들어주는 노드
 - **On Playback Tick:** 매 프레임마다 신호(Tick)을 보내는 노드(Clock 생각하면 됨)
+- **Break 3-Vector:** 입력받은 실수값을 3개의 축으로 분해하여 출력하는 노드
+- **Scale to/from stage units:** 실제 세상의 거리 단위와 시뮬레이션 상의 거리 단위를 변환해주는 노드
+- **ROS2 Subscribe Twist:** Twist라는 topic 타입을 구독하는 노드
 
 ### Note
 - 노드의 여러 설정은 Property에서 할 수 있음
