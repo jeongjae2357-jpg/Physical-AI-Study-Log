@@ -130,7 +130,7 @@ WorkSpace/
 
 |명령어|설명|
 |--|--|
-|(node).get_logger().<로그 레벨>('메세지')||
+|(node).get_logger().<로그 레벨>('메세지')|상태 메세지를 출력|
   
 ## Linux Command
 |명령어|설명|
