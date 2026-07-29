@@ -20,7 +20,7 @@
 |Content -> 폴더: Isaac Sim > Robots > \<원하는 로봇의 .usd 파일 끌어 옴 or <br> Create 탭 > Robots > Asset Browser|로봇 로드|
 |1. 연결하길 원하는 객첵들 선택 <br> 2. Create 탭 > Physics > Joint > \<원하는 Joint 선택> |관절 연결| 
 |1. Create 탭 > Camera <br> 2. Window 탭 > Viewports <br> 3. 새로운 화면의 Perspective -> Camera |카메라 생성 및 카메라 시점으로 보기|
-|Window 탭 > Graph Editors > Action Graph |액션 그래프 띄우기|
+|Window 탭 > Graph Editors > Action Graph |액션 그래프 창 띄우기|
 |Tools 탭 > Robotics > OmniGraph Controllers|기본 제공 OmniGraph|
 
 ### 카메라 조작
