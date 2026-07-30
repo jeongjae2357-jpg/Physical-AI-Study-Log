@@ -79,7 +79,7 @@
 |명령어|설명|
 |--|--|
 |ros2 pkg create --build-type ament_python <package_name>|패키지 생성 명령|
-|ros2 pkg create --build-type ament_cmake <package_name>|CMakeList.txt라는 파일을 포함하면서 새로운 메시지만 정의는 패키지 생성 명령|
+|ros2 pkg create --build-type ament_cmake <package_name>|CMakeList.txt라는 파일을 포함하면서 새로운 메시지만 정의한는 패키지 생성 명령|
 
 ### Package Structure
 ```text
