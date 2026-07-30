@@ -49,6 +49,7 @@
 - **Break 3-Vector:** 입력받은 실수값을 3개의 축으로 분해하여 출력하는 노드
 - **Scale to/from stage units:** 실제 세상의 거리 단위와 시뮬레이션 상의 거리 단위를 변환해주는 노드
 - **ROS2 Subscribe Twist:** Twist라는 topic 타입을 구독하는 노드
+- **ROS2 Context:** ROS2 네크워크 통로 구분 노드 (isaac sim 입장에서 ROS는 외부 프로세스이기 때문에라도 사용해야 함)  
 
 ### Note
 - 노드의 여러 설정은 Property에서 할 수 있음
