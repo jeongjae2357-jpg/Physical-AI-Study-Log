@@ -9,7 +9,7 @@
 - **Joint:** 각 객체를 연결하는 관절
     - **Revolute Joint:** 회전의 자유도를 가지는 관절
 - **OmniGraph:** 각종 3D 그래픽과 시뮬레이션을 위한 생태계인 Omniverse에서 데이터와 실행 흐름을 시각적인 그래프로 프로그래밍하는 프레임 워크
-  
+
 ### 객체 조작
 |조작법|설명|
 |--|--|
@@ -22,6 +22,7 @@
 |1. Create 탭 > Camera <br> 2. Window 탭 > Viewports <br> 3. 새로운 화면의 Perspective -> Camera |카메라 생성 및 카메라 시점으로 보기|
 |Window 탭 > Graph Editors > Action Graph |액션 그래프 창 띄우기|
 |Tools 탭 > Robotics > OmniGraph Controllers|기본 제공 OmniGraph|
+|Window 탭 > Extensions > ROS 2 BRIDGE > ENABLED|ROS2 연결|
 
 ### 카메라 조작
 |조작법|설명|
@@ -34,6 +35,7 @@
 
 ### Note
 - Issac Sim 6.0.1버전 기준으로 작성되었음
+- 각종 실행마다 생기는 오류 메세지 같은 로그들은 Console 창에서 확인 가능 
 
 ## Omni Graph
 ### Action Graph
