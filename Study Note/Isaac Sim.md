@@ -9,6 +9,7 @@
 - **Joint:** 각 객체를 연결하는 관절
     - **Revolute Joint:** 회전의 자유도를 가지는 관절
 - **OmniGraph:** 각종 3D 그래픽과 시뮬레이션을 위한 생태계인 Omniverse에서 데이터와 실행 흐름을 시각적인 그래프로 프로그래밍하는 프레임 워크
+- **Lidar:** 레이저 빛의 반사를 이용하여 주변 공간을 3차원으로 인식하는 센서 
 
 ### 객체 조작
 |조작법|설명|
@@ -23,6 +24,7 @@
 |Window 탭 > Graph Editors > Action Graph |액션 그래프 창 띄우기|
 |Tools 탭 > Robotics > OmniGraph Controllers|기본 제공 OmniGraph|
 |Window 탭 > Extensions > ROS 2 BRIDGE > ENABLED|ROS2 연결|
+|Create 탭 > Sensors > PhysX Lidar or RTX Lidar|Lidar 생성|
 
 ### 카메라 조작
 |조작법|설명|
@@ -35,7 +37,8 @@
 
 ### Note
 - Issac Sim 6.0.1버전 기준으로 작성되었음
-- 각종 실행마다 생기는 오류 메세지 같은 로그들은 Console 창에서 확인 가능 
+- 각종 실행마다 생기는 오류 메세지 같은 로그들은 Console 창에서 확인 가능
+- PhysX Lidar는 물리엔진을 이용해 연산하기에 편법이라 보면 되고 RTX Lidar는 실제 빛을 최대한 구현해서 작동시킨 센서라 보면 됨
 
 ## Omni Graph
 ### Action Graph
@@ -53,7 +56,7 @@
 - **Isaac Run One Simulation Frame:** 일정 주기로 오는 신호에 맞춰 다음 프레임으로 진행할 것을 명령하는 신호를 내보내는 노드(동기화 용도로 쓰임)
 - **Isaac Create Render Product:** 사용할 카메라 시점과 해상도 지정하고 들어오는 신호에 맞춰 GPU에 렌더링 데이터를 생성할 것을 요청하고 그 생성 데이터의 위치를 출력하는 노드
 - **ROS2 Camera Helper:** 렌더링 데이터들을 ROS 메세지 형태로 자동 변환 시켜주는 노드
-
+- **ROS2
 
 ### Note
 - 노드의 여러 설정은 Property에서 할 수 있음
