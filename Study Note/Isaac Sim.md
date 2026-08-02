@@ -55,8 +55,8 @@
 - **ROS2 Context:** ROS2 네크워크 통로 구분 노드 (isaac sim 입장에서 ROS는 외부 프로세스이기 때문에라도 사용해야 함)
 - **Isaac Run One Simulation Frame:** 일정 주기로 오는 신호에 맞춰 다음 프레임으로 진행할 것을 명령하는 신호를 내보내는 노드(동기화 용도로 쓰임)
 - **Isaac Create Render Product:** 사용할 카메라 시점과 해상도 지정하고 들어오는 신호에 맞춰 GPU에 렌더링 데이터를 생성할 것을 요청하고 그 생성 데이터의 위치를 출력하는 노드
-- **ROS2 Camera Helper:** 렌더링 데이터들을 ROS 메세지 형태로 자동 변환 시켜주는 노드
-- **ROS2
+- **ROS2 Camera Helper:** 렌더링 데이터들을 ROS 메세지 형태로 자동 변환 시켜 발행해주는 노드
+- **ROS2 RTX Lidar Helper:** Lidar 데이터들을 ROS 메세지 형태로 자동 변환 시켜 발행해주는 노드
 
 ### Note
 - 노드의 여러 설정은 Property에서 할 수 있음
