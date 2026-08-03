@@ -62,8 +62,11 @@
 - **Isaac Read System Time:** 운영체제에서 흐르는 시간을 읽어오는 노드
 - **ROS2 Publish Clock:** Clock이라는 topic 타입을 발행하는 노드
 - **ROS2 Subscribe Clock:** Clock이라는 topic 타입을 구독하는 노드
-- **ROS2 Publish Transform Tree:** parentPrim 좌표계 기준으로 targetPrim의 위치와 각도를 계산한 결과를 TFMessage 타입의 형태로 /tf 토픽에 발행하는 노드
+- **ROS2 Publish Transform Tree:** parentPrim 좌표계 기준으로 targetPrim의 **위치와 각도**를 계산한 결과를 TFMessage 타입의 형태로 /tf 토픽에 발행하는 노드 (스스로 계산O)
+- **ROS2 Publish Raw Transform Tree:** 이미 계산된 Transform Tree 결과를 TFMessage 타입의 형태로 /tf 토픽에 발행하는 노드 (스스로 계산X)
 - **Isaac Compute Transform Tree:** parentPrim에는 로봇의 최상위 frame을 넣고, targetPrim에는 로봇의 하위 frame들(로봇 자체를 넣으면 알아서 하위 frame들이 넣어짐)을 넣으면 그 트리구조를 자동 계산해주는 노드
+- **ROS2 publish Odometry:** 계산된 로봇의 **선속도와 각속도**를 Odometry이라는 타입의 형태로 /odom 토픽에 발행하는 노드 (스스로 계산X)
+- **Isaac Compute Odometry Node:** 로봇의 **선속도와 각속도**를 계산한 결과를 반환하는 노드
 - 
 ### Note
 - 노드의 여러 설정은 Property에서 할 수 있음
@@ -71,3 +74,4 @@
 - 마치 코드에서 변수를 쓰는 것처럼 바로 Property에 직접 입력하는 것보다는 따로 Token 같은 데이터 저장 노드를 만들어 이용하는 것이 관리 측면에서 더 좋음 
 - 시간을 다루는 이유는 여러 센서들로부터 오는 데이터들을 동기화해야 하기 때문이다.
 - Isaac Compute Transform Tree를 이용하여 ROS2 Publish Transform Tree에 parentPrim과 targetPrim을 제공해주면 기존 단일 관계만 다룰 수 있다는 한계에서 벗어나 여러 frame들의 관계를 다룰 수 있음
+- Transform Tree에서 parentPrim과 targetPrim의 관계가 실제 로봇의 tf2 구조의 부모 자식관계와 다르더라도 계산되긴 함, 그러나 실제 로봇 운영에 있어 권장되진 않음
