@@ -57,8 +57,13 @@
 - **Isaac Create Render Product:** 사용할 카메라 시점과 해상도 지정하고 들어오는 신호에 맞춰 GPU에 렌더링 데이터를 생성할 것을 요청하고 그 생성 데이터의 위치를 출력하는 노드
 - **ROS2 Camera Helper:** 렌더링 데이터들을 ROS 메세지 형태로 자동 변환 시켜 발행해주는 노드
 - **ROS2 RTX Lidar Helper:** Lidar 데이터들을 ROS 메세지 형태로 자동 변환 시켜 발행해주는 노드
-
+- **Isaac Read Simulation Time:** 시뮬레이션상에서 흐르는 시간을 읽어오는 노드
+- **Isaac Read System Time:** 운영체제에서 흐르는 시간을 읽어오는 노드
+- **ROS2 Publish Clock:** Clock이라는 topic 타입을 발행하는 노드
+- **ROS2 Subscribe Clock:** Clock이라는 topic 타입을 구독하는 노드
+- 
 ### Note
 - 노드의 여러 설정은 Property에서 할 수 있음
 - 노드의 입력이나 출력 부분에 마우스를 가져다 대면 처리할 수 있는 데이터 타입을 알 수 있음
 - 마치 코드에서 변수를 쓰는 것처럼 바로 Property에 직접 입력하는 것보다는 따로 Token 같은 데이터 저장 노드를 만들어 이용하는 것이 관리 측면에서 더 좋음 
+- 시간을 다루는 이유는 여러 센서들로부터 오는 데이터들을 동기화해야 하기 때문이다.
