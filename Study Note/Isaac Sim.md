@@ -27,6 +27,7 @@
 |Window 탭 > Extensions > ROS 2 BRIDGE > ENABLED|ROS2 연결|
 |Create 탭 > Sensors > PhysX Lidar or RTX Lidar|Lidar 생성|
 |Tools 탭 > Robotics > Occupancy Map|Occupancy Map 창 띄우기|
+|Window 탭 > Example |대부분의 예제를 찾을 수 있음|
 
 ### 카메라 조작
 |조작법|설명|
