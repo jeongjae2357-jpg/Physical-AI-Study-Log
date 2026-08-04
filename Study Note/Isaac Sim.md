@@ -14,7 +14,7 @@
 - **Occupancy Map:** 공간을 격자로 나누어 장애물이 있는 위치, 이동 가능한 영역, 미확인 영역을 기록한 지도(로봇이 이동 가능한 구역을 알려주는 역할을 함)
 - **Navigation:** 목표 위치를 지정해주면 로봇이 주변 환경과 현재 위치를 고려하여 스스로 이동 경로를 계획하고 움직이는 것
 
-### 객체 조작
+### 조작법
 |조작법|설명|
 |--|--|
 |Create 탭> \<원하는 Object>|Object 생성|
@@ -30,6 +30,8 @@
 |Create 탭 > Sensors > PhysX Lidar or RTX Lidar|Lidar 생성|
 |Tools 탭 > Robotics > Occupancy Map|Occupancy Map 창 띄우기|
 |Window 탭 > Example |대부분의 예제를 찾을 수 있음|
+|1. VS code에서 Isaac Sim VS Code Edition 설치 <br> 2. Window 탭 > Extension > VS CODE INTEGRATION|Isaac Sim에서 VS code 연동| 
+|Window 탭 > Extension > JUPYTER NOTEBOOK INTEGRATION|Isaac Sim에서 jupyter notebook 연동| 
 
 ### 카메라 조작
 |조작법|설명|
