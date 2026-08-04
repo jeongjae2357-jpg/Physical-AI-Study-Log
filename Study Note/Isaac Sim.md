@@ -26,6 +26,7 @@
 |Tools 탭 > Robotics > OmniGraph Controllers|기본 제공 OmniGraph|
 |Window 탭 > Extensions > ROS 2 BRIDGE > ENABLED|ROS2 연결|
 |Create 탭 > Sensors > PhysX Lidar or RTX Lidar|Lidar 생성|
+|Tools 탭 > Robotics > Occupancy Map|Occupancy Map 창 띄우기|
 
 ### 카메라 조작
 |조작법|설명|
