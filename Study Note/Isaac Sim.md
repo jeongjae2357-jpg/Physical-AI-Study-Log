@@ -83,3 +83,7 @@
 - 시간을 다루는 이유는 여러 센서들로부터 오는 데이터들을 동기화해야 하기 때문이다.
 - Isaac Compute Transform Tree를 이용하여 ROS2 Publish Transform Tree에 parentPrim과 targetPrim을 제공해주면 기존 단일 관계만 다룰 수 있다는 한계에서 벗어나 여러 frame들의 관계를 다룰 수 있음
 - Transform Tree에서 parentPrim과 targetPrim의 관계가 실제 로봇의 tf2 구조의 부모 자식관계와 다르더라도 계산되긴 함, 그러나 실제 로봇 운영에 있어 권장되진 않음
+
+## Python
+|코드|설명|
+|--|--|
