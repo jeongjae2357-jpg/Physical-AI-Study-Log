@@ -85,5 +85,11 @@
 - Transform Tree에서 parentPrim과 targetPrim의 관계가 실제 로봇의 tf2 구조의 부모 자식관계와 다르더라도 계산되긴 함, 그러나 실제 로봇 운영에 있어 권장되진 않음
 
 ## Python
+- **UsdGeom:** USD에서 기하학과 관련된 처리를 하는 **모듈** (from pxr import UsdGeom)
+- **omni:** Isaac Sim에서 Python API를 사용하기 위한 **패키지** (import omni)
 |코드|설명|
 |--|--|
+|context = omni.usd.get_context()|현재 Isaac Sim의 USD 환경을 관리하는 객체를 반환|
+|context.get_stage()|현재 활성화된 stage 객체를 반환|
+|UsdGeom.Xform.Define(<Stage>, '경로')|해당 <Stage>에서 '경로' 위치에 Xform을 생성 후 관련 객체를 반환|
+|UsdGeom.Sphere.Define(<Stage>, '경로')|해당 <Stage>에서 '경로' 위치에 Sphere을 생성 후 관련 객체를 반환|
