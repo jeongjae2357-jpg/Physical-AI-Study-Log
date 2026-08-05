@@ -87,6 +87,7 @@
 ## Python
 - **UsdGeom:** USD에서 기하학과 관련된 처리를 하는 **모듈** (from pxr import UsdGeom)
 - **omni:** Isaac Sim에서 Python API를 사용하기 위한 **패키지** (import omni)
+
 |코드|설명|
 |--|--|
 |context = omni.usd.get_context()|현재 Isaac Sim의 USD 환경을 관리하는 객체를 반환|
