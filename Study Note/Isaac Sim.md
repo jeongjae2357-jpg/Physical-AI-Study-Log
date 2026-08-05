@@ -85,9 +85,10 @@
 - Transform Tree에서 parentPrim과 targetPrim의 관계가 실제 로봇의 tf2 구조의 부모 자식관계와 다르더라도 계산되긴 함, 그러나 실제 로봇 운영에 있어 권장되진 않음
 
 ## Python
-### Basic Structure
+### Structure
 ```python
 
+# 기본 구조
 class 이름(부모):
 
     # 자기 자신과 부모 클래스를 생성 및 초기화
@@ -101,6 +102,20 @@ class 이름(부모):
         # 시뮬레이선 실행시 한 번 실행되는 명령어들을 적는 곳
 ```
 
+```python
+# 로봇 조작
+from isaacsim.core.simulation_manager import SimulationManager
+
+from isaacsim.core.simulation_manager.impl.isaac_events import IsaacEvents
+
+    # 물리엔진 틱마다(IsaacEvents.POST_PHYSICS_STEP) 등록한 함수(self.send_robot_actions)를 실행하도록 구독
+    self._physics_callback_id = SimulationManager.register_callback(
+        self.send_robot_actions, IsaacEvents.POST_PHYSICS_STEP
+    )
+
+    # callback이 호출될 때마다 실행할 로봇의 행동을 정의
+    def send_robot_actions(self, dt, context):
+```
 ### Plus Code
 - **UsdGeom:** USD에서 기하학과 관련된 처리를 하는 **모듈** (from pxr import UsdGeom)
 - **omni:** Isaac Sim에서 Python API를 사용하기 위한 **패키지** (import omni)
