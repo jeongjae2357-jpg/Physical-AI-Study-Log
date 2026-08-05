@@ -97,6 +97,9 @@ class 이름(BaseSample):
 
     # 초기 Scene을 설정하는 곳
     def setup_scene(self) -> None:
+
+    async def setup_post_load(self) -> None:
+        # 시뮬레이선 실행시 한 번 실행되는 명령어들을 적는 곳
 ```
 
 ### Plus Code
