@@ -87,9 +87,8 @@
 ## Python
 ### Basic Structure
 ```python
-from isaacsim.examples.base.base_sample_experimental import BaseSample
 
-class 이름(BaseSample):
+class 이름(부모):
 
     # 자기 자신과 부모 클래스를 생성 및 초기화
     def __init__(self) -> None:
@@ -105,12 +104,13 @@ class 이름(BaseSample):
 ### Plus Code
 - **UsdGeom:** USD에서 기하학과 관련된 처리를 하는 **모듈** (from pxr import UsdGeom)
 - **omni:** Isaac Sim에서 Python API를 사용하기 위한 **패키지** (import omni)
+- **GeomPrim:** 3D Geometry를 다루는 **클래스**
+- **RigidPrim:** 중력, 질량, 속도 등 물리연산을 다루는 **클래스**
 
 |코드|설명|
 |--|--|
-|context = omni.usd.get_context()|현재 Isaac Sim의 USD 환경을 관리하는 객체를 반환|
-|context.get_stage()|현재 활성화된 stage 객체를 반환|
-|UsdGeom.Xform.Define(<Stage>, '경로')|해당 <Stage>에서 '경로' 위치에 Xform을 생성 후 관련 객체를 반환|
-|UsdGeom.Sphere.Define(<Stage>, '경로')|해당 <Stage>에서 '경로' 위치에 Sphere을 생성 후 관련 객체를 반환|
-
+|from isaacsim.storage.native import get_assets_root_path|엔비디아가 제공하는 3D 로봇, 환경, 오브젝트 파일(USD 파일)들이 저장되어 있는 공식 클라우드 서버의 주소를 반환하는 함수를 가져옴|
+|from isaacsim.core.experimental.prims import GeomPrim, RigidPrim| GeomPrim과 RigidPrim 클래스를 가져옴|
+|GeomPrim(paths, apply_collision_apis)|paths의 객체에게 형상 정보를 부여, apply_collision_apis로 충돌 여부 결정 가능|
+|RigidPrim(paths)|paths의 객체에게 PhysicsScene에서 정한 물리엔진(중력, 힘 등)에 지배를 받게 함|
 
