@@ -94,3 +94,17 @@
 |context.get_stage()|현재 활성화된 stage 객체를 반환|
 |UsdGeom.Xform.Define(<Stage>, '경로')|해당 <Stage>에서 '경로' 위치에 Xform을 생성 후 관련 객체를 반환|
 |UsdGeom.Sphere.Define(<Stage>, '경로')|해당 <Stage>에서 '경로' 위치에 Sphere을 생성 후 관련 객체를 반환|
+
+### Basic Structure
+```code
+from isaacsim.examples.base.base_sample_experimental import BaseSample
+
+class 이름(BaseSample):
+
+    # 자기 자신과 부모 클래스를 생성 및 초기화
+    def __init__(self) -> None:
+        super().__init__()
+
+    # 초기 Scene을 설정하는 곳
+    def setup_scene(self) -> None:
+```
