@@ -1,6 +1,7 @@
 # Isaac Sim
 ## Interface
 ### 개념
+- **USD:** Universal Scene Description의 약자로 모양, 질감, 물리엔진, 조명 등 3D 그래픽에 필요한 모든 요소를 담고 있으며 다른 폐쇄적인 3D 그래픽 파일에 대해서 원본을 최대한 훼손하지 않고 변환될 수 있는 파일 형식
 - **Scope:** 폴더와 같이 정리를 도와주는 보조 장치
 - **Mesh:** 물체
 - **PhysicsScene:** 물리 엔진
