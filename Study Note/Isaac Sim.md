@@ -116,14 +116,16 @@ from isaacsim.core.simulation_manager.impl.isaac_events import IsaacEvents
     # callback이 호출될 때마다 실행할 로봇의 행동을 정의
     def send_robot_actions(self, dt, context):
 ```
-### Plus Code
+### Code
 - **UsdGeom:** USD에서 기하학과 관련된 처리를 하는 **모듈** (from pxr import UsdGeom)
 - **omni:** Isaac Sim에서 Python API를 사용하기 위한 **패키지** (import omni)
+- **stage_utils:** USD 스테이지를 직접 조작하는 함수들을 모아 놓은 모듈을 가져옴
 - **GeomPrim:** 3D Geometry를 다루는 **클래스**
 - **RigidPrim:** 중력, 질량, 속도 등 물리연산을 다루는 **클래스**
 
 |코드|설명|
 |--|--|
+|import isaacsim.core.experimental.utils.stage as stage_utils|stage_utils를 가져옴|
 |from isaacsim.storage.native import get_assets_root_path|엔비디아가 제공하는 3D 로봇, 환경, 오브젝트 파일(USD 파일)들이 저장되어 있는 공식 클라우드 서버의 주소를 반환하는 함수를 가져옴|
 |from isaacsim.core.experimental.prims import GeomPrim, RigidPrim| GeomPrim과 RigidPrim 클래스를 가져옴|
 |GeomPrim(paths, apply_collision_apis)|paths의 객체에게 형상 정보를 부여, apply_collision_apis로 충돌 여부 결정 가능|
