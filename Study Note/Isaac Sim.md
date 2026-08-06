@@ -135,3 +135,4 @@ from isaacsim.core.simulation_manager.impl.isaac_events import IsaacEvents
 
 ### Note
 - 객체 생성간 주는 size는 기본 뼈대의 크기를 의미하고, scales는 뼈대로부터 크기 변화율을 의미한다.
+- 예제 속 코드를 외우기보단 원하는 방향으로 수정할 수 있을 만큼 이해를 목표로 공부하기
