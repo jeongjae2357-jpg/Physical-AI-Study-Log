@@ -133,3 +133,5 @@ from isaacsim.core.simulation_manager.impl.isaac_events import IsaacEvents
 |GeomPrim(paths, apply_collision_apis)|paths의 객체에게 형상 정보를 부여, apply_collision_apis로 충돌 여부 결정 가능|
 |RigidPrim(paths)|paths의 객체에게 PhysicsScene에서 정한 물리엔진(중력, 힘 등)에 지배를 받게 함|
 
+### Note
+- 객체 생성간 주는 size는 기본 뼈대의 크기를 의미하고, scales는 뼈대로부터 크기 변화율을 의미한다.
