@@ -124,6 +124,7 @@ from isaacsim.core.simulation_manager.impl.isaac_events import IsaacEvents
 - **stage_utils:** USD 스테이지를 직접 조작하는 함수들을 모아 놓은 모듈을 가져옴
 - **GeomPrim:** 3D Geometry를 다루는 **클래스**
 - **RigidPrim:** 중력, 질량, 속도 등 물리연산을 다루는 **클래스**
+- **Articulation:** 관절 제어를 관장하고, 로봇의 자세나 위치, 속도, 작용하는 힘 등을 읽어오는 **클래스**
 
 |코드|설명|
 |--|--|
@@ -132,6 +133,8 @@ from isaacsim.core.simulation_manager.impl.isaac_events import IsaacEvents
 |from isaacsim.core.experimental.prims import GeomPrim, RigidPrim| GeomPrim과 RigidPrim 클래스를 가져옴|
 |GeomPrim(paths, apply_collision_apis)|paths의 객체에게 형상 정보를 부여, apply_collision_apis로 충돌 여부 결정 가능|
 |RigidPrim(paths)|paths의 객체에게 PhysicsScene에서 정한 물리엔진(중력, 힘 등)에 지배를 받게 함|
+|from isaacsim.core.experimental.prims import Articulation|Articulation 클래스를 가져옴|
+|Articulation("paths")|해당 paths 경로 속 로봇의 관절을 관장하는 객체를 생성|
 
 ### Note
 - 객체 생성간 주는 size는 기본 뼈대의 크기를 의미하고, scales는 뼈대로부터 크기 변화율을 의미한다.
